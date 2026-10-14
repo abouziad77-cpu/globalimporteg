@@ -1,0 +1,144 @@
+# لوحة التحكم — Global Import (Decap CMS)
+backend:
+  name: github
+  repo: OWNER/REPO          # هيتحدّث بعد إنشاء المستودع على GitHub
+  branch: main
+  commit_messages:
+    update: "تعديل {{collection}}: {{slug}}"
+
+locale: ar
+site_url: https://globalimporteg.com
+display_url: https://globalimporteg.com
+logo_url: https://globalimporteg.com/images/logo.png
+
+media_folder: images/uploads
+public_folder: /images/uploads
+
+collections:
+  # ================= بيانات التواصل =================
+  - name: settings
+    label: "⚙️ بيانات التواصل"
+    files:
+      - name: contact
+        label: "التليفون والإيميل والعنوان والسوشيال"
+        file: data/settings.json
+        fields:
+          - {name: phone, label: "رقم التليفون (اللي بيظهر)", widget: string, hint: "مثال: +20 128 585 5552"}
+          - {name: whatsapp, label: "رقم الواتساب", widget: string, hint: "بالصيغة الدولية من غير + ولا مسافات — مثال: 201285855552"}
+          - {name: email, label: "الإيميل الأساسي", widget: string}
+          - {name: email2, label: "إيميل إضافي", widget: string, required: false}
+          - {name: addressAr, label: "العنوان (عربي)", widget: string}
+          - {name: addressEn, label: "العنوان (English)", widget: string}
+          - {name: hoursAr, label: "مواعيد العمل (عربي)", widget: string}
+          - {name: hoursEn, label: "مواعيد العمل (English)", widget: string}
+          - {name: map, label: "إحداثيات الخريطة", widget: string, required: false, hint: "خط العرض,خط الطول"}
+          - {name: facebook, label: "لينك فيسبوك", widget: string, required: false}
+          - {name: instagram, label: "لينك انستجرام", widget: string, required: false}
+
+  # ================= الجولف كار =================
+  - name: golf
+    label: "🛺 عربيات الجولف كار (Elite Car)"
+    files:
+      - name: carts
+        label: "الموديلات والمواصفات"
+        file: data/carts.json
+        fields:
+          - name: items
+            label: "الموديلات"
+            label_singular: "موديل"
+            widget: list
+            summary: "{{fields.code}} — {{fields.name_ar}}"
+            fields:
+              - {name: code, label: "كود الموديل", widget: string, hint: "مثال: Elite S4"}
+              - name: category
+                label: "النوع"
+                widget: select
+                options:
+                  - {label: "عادي (Non-Lifted)", value: standard}
+                  - {label: "مرفوع Lifted", value: lifted}
+                  - {label: "كل الكراسي لقدّام", value: forward}
+                  - {label: "خدمة / إسعاف / نقل", value: service}
+              - {name: image, label: "صورة العربية", widget: image}
+              - {name: name_ar, label: "الاسم (عربي)", widget: string}
+              - {name: name_en, label: "الاسم (English)", widget: string}
+              - {name: desc_ar, label: "وصف قصير (عربي)", widget: text}
+              - {name: desc_en, label: "وصف قصير (English)", widget: text}
+              - {name: seats, label: "عدد الركاب", widget: string, hint: "مثال: 4 أو 4+2"}
+              - {name: range, label: "أقصى مسافة (كم)", widget: number}
+              - {name: dims, label: "الأبعاد ط×ع×ار (مم)", widget: string}
+              - {name: load, label: "الحمولة (كجم)", widget: number}
+              - {name: turn, label: "نصف قطر الدوران (م)", widget: string}
+              - {name: climb, label: "الصعود", widget: string, hint: "مثال: 25%"}
+              - {name: bed, label: "مقاس الصندوق (لو فيه)", widget: string, required: false}
+              - {name: wheelbase, label: "قاعدة العجلات (مم)", widget: string, required: false}
+              - {name: battery_ar, label: "بطارية مختلفة عن الأساسية (عربي)", widget: string, required: false, hint: "سيبها فاضية لو نفس البطارية الأساسية"}
+              - {name: battery_en, label: "بطارية مختلفة (English)", widget: string, required: false}
+              - {name: popular, label: "علامة «الأكثر طلباً»", widget: boolean, default: false}
+          - name: common
+            label: "المواصفات المشتركة لكل العربيات"
+            widget: object
+            collapsed: true
+            fields:
+              - {name: voltage_ar, label: "النظام (عربي)", widget: string}
+              - {name: voltage_en, label: "النظام (English)", widget: string}
+              - {name: battery_ar, label: "البطارية (عربي)", widget: string}
+              - {name: battery_en, label: "البطارية (English)", widget: string}
+              - {name: motor_ar, label: "الموتور (عربي)", widget: string}
+              - {name: motor_en, label: "الموتور (English)", widget: string}
+              - {name: controller_ar, label: "الكنترولر (عربي)", widget: string}
+              - {name: controller_en, label: "الكنترولر (English)", widget: string}
+              - {name: speed_ar, label: "السرعة (عربي)", widget: string}
+              - {name: speed_en, label: "السرعة (English)", widget: string}
+              - {name: brakes_ar, label: "الفرامل (عربي)", widget: string}
+              - {name: brakes_en, label: "الفرامل (English)", widget: string}
+              - {name: suspension_ar, label: "المساعدين (عربي)", widget: string}
+              - {name: suspension_en, label: "المساعدين (English)", widget: string}
+              - {name: rims_ar, label: "الجنوط (عربي)", widget: string}
+              - {name: rims_en, label: "الجنوط (English)", widget: string}
+              - {name: warranty_ar, label: "الضمان (عربي)", widget: string}
+              - {name: warranty_en, label: "الضمان (English)", widget: string}
+
+  # ================= الغوص =================
+  - name: diving
+    label: "🤿 معدات الغوص"
+    files:
+      - name: products
+        label: "الأنواع والمقاسات والكمبروسرات"
+        file: data/diving.json
+        fields:
+          - name: brands
+            label: "أنواع الاسطوانات"
+            label_singular: "نوع"
+            widget: list
+            summary: "{{fields.name}} ({{fields.origin}})"
+            fields:
+              - {name: name, label: "الاسم", widget: string}
+              - {name: origin, label: "بلد المنشأ (بالإنجليزي)", widget: string, hint: "مثال: USA"}
+              - {name: tag_ar, label: "الفئة (عربي)", widget: string}
+              - {name: tag_en, label: "الفئة (English)", widget: string}
+              - {name: desc_ar, label: "الوصف (عربي)", widget: text}
+              - {name: desc_en, label: "الوصف (English)", widget: text}
+          - name: sizes
+            label: "المقاسات"
+            label_singular: "مقاس"
+            widget: list
+            summary: "{{fields.liters}} لتر"
+            fields:
+              - {name: liters, label: "المقاس (لتر)", widget: string}
+              - {name: image, label: "الصورة", widget: image, required: false}
+              - {name: desc_ar, label: "الوصف (عربي)", widget: text}
+              - {name: desc_en, label: "الوصف (English)", widget: text}
+              - {name: popular, label: "علامة «الأكثر طلباً»", widget: boolean, default: false}
+          - name: compressors
+            label: "الكمبروسرات"
+            label_singular: "كمبروسر"
+            widget: list
+            summary: "{{fields.name_ar}}"
+            fields:
+              - {name: name_ar, label: "الاسم (عربي)", widget: string}
+              - {name: name_en, label: "الاسم (English)", widget: string}
+              - {name: tag_ar, label: "الفئة (عربي)", widget: string}
+              - {name: tag_en, label: "الفئة (English)", widget: string}
+              - {name: desc_ar, label: "الوصف (عربي)", widget: text}
+              - {name: desc_en, label: "الوصف (English)", widget: text}
+              - {name: image, label: "صورة (اختياري)", widget: image, required: false}

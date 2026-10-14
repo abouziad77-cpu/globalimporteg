@@ -1,0 +1,87 @@
+{
+  "brands": [
+    {
+      "name": "Catalina",
+      "origin": "USA",
+      "tag_ar": "أمريكي — الفئة الأعلى",
+      "tag_en": "American — premium",
+      "desc_ar": "الاسم الأشهر في مراكز الغوص حول العالم. جودة تصنيع عالية وعمر طويل.",
+      "desc_en": "The best-known name in dive centres worldwide. Top build quality and long service life."
+    },
+    {
+      "name": "Nardi",
+      "origin": "INDIA",
+      "tag_ar": "هندي — جودة وسعر متوازن",
+      "tag_en": "Indian — balanced value",
+      "desc_ar": "اختيار عملي لمراكز الغوص اللي محتاجة كميات بجودة كويسة وسعر مناسب.",
+      "desc_en": "A practical choice for centres needing volume at good quality and a fair price."
+    },
+    {
+      "name": "صيني / Chinese",
+      "origin": "CHINA",
+      "tag_ar": "اقتصادي",
+      "tag_en": "Economy",
+      "desc_ar": "أوفر اختيار للمراكز الجديدة والطلبات الكبيرة.",
+      "desc_en": "The most affordable option for new centres and large orders."
+    }
+  ],
+  "sizes": [
+    {
+      "liters": "15",
+      "image": "/images/diving/cyl-tall.jpg",
+      "popular": false,
+      "desc_ar": "سعة كبيرة لغطسات أطول وأعمق والغواصين المحترفين.",
+      "desc_en": "Large capacity for longer, deeper dives and advanced divers."
+    },
+    {
+      "liters": "12",
+      "image": "/images/diving/cyl-valve.jpg",
+      "popular": true,
+      "desc_ar": "المقاس القياسي في مراكز الغوص والرحلات اليومية.",
+      "desc_en": "The standard size for dive centres and daily trips."
+    },
+    {
+      "liters": "10",
+      "image": "/images/diving/cyl-body.jpg",
+      "popular": false,
+      "desc_ar": "أخف في الوزن — مناسبة للغواصين الأصغر والغطسات القصيرة.",
+      "desc_en": "Lighter — suited to smaller divers and shorter dives."
+    },
+    {
+      "liters": "6",
+      "image": "/images/diving/cyl-pair.jpg",
+      "popular": false,
+      "desc_ar": "للأطفال والتدريب، وكاسطوانة احتياطي (Stage / Pony).",
+      "desc_en": "For kids and training, or as a stage / pony bottle."
+    }
+  ],
+  "compressors": [
+    {
+      "tag_ar": "محمول",
+      "tag_en": "Portable",
+      "name_ar": "كمبروسر محمول",
+      "name_en": "Portable compressor",
+      "desc_ar": "للمراكب ورحلات السفاري والاستخدام الشخصي — بنزين أو كهربا.",
+      "desc_en": "For boats, safaris and personal use — petrol or electric.",
+      "image": ""
+    },
+    {
+      "tag_ar": "مراكز غوص",
+      "tag_en": "Dive centres",
+      "name_ar": "كمبروسر متوسط",
+      "name_en": "Mid-range compressor",
+      "desc_ar": "لمراكز الغوص الصغيرة والمتوسطة — تعبئة سريعة واعتمادية عالية.",
+      "desc_en": "For small and mid-size dive centres — fast, reliable filling.",
+      "image": ""
+    },
+    {
+      "tag_ar": "صناعي",
+      "tag_en": "Industrial",
+      "name_ar": "كمبروسر صناعي",
+      "name_en": "Industrial compressor",
+      "desc_ar": "لمراكز الغوص الكبيرة والمراكب اليومية — تشغيل متواصل.",
+      "desc_en": "For large dive centres and daily boats — continuous duty.",
+      "image": ""
+    }
+  ]
+}
