@@ -1,58 +1,53 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-<meta name="robots" content="noindex,nofollow">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>جلوبال — المخازن والمديونيات</title>
+<meta name="robots" content="noindex,nofollow">
+<title>جلوبال — الحسابات والمخازن</title>
 <style>
 :root{--navy:#0A1F33;--navy2:#13314f;--gold:#C9A24B;--bg:#f3f5f8;--card:#fff;--line:#e2e6ec;--txt:#1b2633;--mut:#6b7684;--red:#c0392b;--orange:#e67e22;--green:#1e8e5a}
 *{box-sizing:border-box}
 body{margin:0;font-family:"Segoe UI",Tahoma,Arial,sans-serif;background:var(--bg);color:var(--txt);font-size:15px}
-header{background:var(--navy);color:#fff;padding:12px 18px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-header h1{font-size:18px;margin:0;font-weight:600}
-header h1 b{color:var(--gold)}
+header{background:var(--navy);color:#fff;padding:10px 18px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+header h1{font-size:18px;margin:0;font-weight:600}header h1 b{color:var(--gold)}
 .rates-mini{margin-inline-start:auto;font-size:13px;opacity:.9}
 nav{background:var(--navy2);display:flex;flex-wrap:wrap}
-nav button{background:none;border:0;color:#cfd8e3;padding:12px 16px;font:inherit;cursor:pointer;border-bottom:3px solid transparent}
+nav button{background:none;border:0;color:#cfd8e3;padding:11px 13px;font:inherit;font-size:14.5px;cursor:pointer;border-bottom:3px solid transparent}
 nav button.on{color:#fff;border-bottom-color:var(--gold)}
 nav .badge{background:var(--red);color:#fff;border-radius:10px;padding:0 7px;font-size:12px;margin-inline-start:4px}
-main{padding:18px;max-width:1250px;margin:auto}
+main{padding:18px;max-width:1280px;margin:auto}
 .card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px;margin-bottom:16px}
 .card h2{font-size:16px;margin:0 0 12px;color:var(--navy)}
 .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-bottom:16px}
 .kpi{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px}
-.kpi span{color:var(--mut);font-size:13px}
-.kpi b{display:block;font-size:22px;margin-top:4px;color:var(--navy)}
-.kpi small{color:var(--mut)}
+.kpi span{color:var(--mut);font-size:13px}.kpi b{display:block;font-size:21px;margin-top:4px;color:var(--navy)}.kpi small{color:var(--mut)}
 table{width:100%;border-collapse:collapse;font-size:14px}
 th,td{padding:8px 6px;border-bottom:1px solid var(--line);text-align:right;vertical-align:top}
 th{background:#f7f8fa;color:var(--mut);font-weight:600;white-space:nowrap}
-tr.late td{background:#fdecea}
-tr.soon td{background:#fff4e5}
+tr.late td{background:#fdecea}tr.soon td{background:#fff4e5}tr.tot td,tr.tot th{font-weight:700;background:#f7f8fa}
 .tw{overflow-x:auto}
-form.grid,.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;align-items:end}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:10px;align-items:end}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}@media(max-width:850px){.two{grid-template-columns:1fr}}
 label{display:flex;flex-direction:column;gap:4px;font-size:13px;color:var(--mut)}
 input,select,textarea{font:inherit;padding:7px 9px;border:1px solid #cfd5dd;border-radius:7px;background:#fff;color:var(--txt);width:100%}
 button.b{font:inherit;padding:8px 14px;border-radius:7px;border:1px solid var(--navy);background:var(--navy);color:#fff;cursor:pointer}
-button.b.g{background:var(--gold);border-color:var(--gold);color:var(--navy)}
-button.b.o{background:#fff;color:var(--navy)}
-button.b.r{background:#fff;color:var(--red);border-color:var(--red)}
+button.b.g{background:var(--gold);border-color:var(--gold);color:var(--navy)}button.b.o{background:#fff;color:var(--navy)}
 button.s{font:inherit;font-size:12.5px;padding:4px 9px;border-radius:6px;border:1px solid #cfd5dd;background:#fff;cursor:pointer;margin:1px}
 button.s.wa{border-color:#25D366;color:#128C7E}
-.pill{display:inline-block;padding:1px 8px;border-radius:10px;font-size:12px}
-.p-late{background:var(--red);color:#fff}.p-soon{background:var(--orange);color:#fff}.p-ok{background:#e5f4ec;color:var(--green)}.p-paid{background:#e9ecf1;color:var(--mut)}
-.alert{border-radius:10px;padding:12px 16px;margin-bottom:14px;background:#fff4e5;border:1px solid #f5c58a}
-.alert.red{background:#fdecea;border-color:#f1a9a0}
-.mut{color:var(--mut);font-size:13px}
-.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-.hide{display:none}
+.pill{display:inline-block;padding:1px 8px;border-radius:10px;font-size:12px;background:#e9ecf1;color:var(--mut)}
+.p-late,.p-out{background:var(--red);color:#fff}.p-soon{background:var(--orange);color:#fff}.p-ok,.p-in{background:#e5f4ec;color:var(--green)}
+.p-out{background:#fdecea;color:var(--red)}
+.alert{border-radius:10px;padding:12px 16px;margin-bottom:14px;background:#fff4e5;border:1px solid #f5c58a}.alert.red{background:#fdecea;border-color:#f1a9a0}
+.mut{color:var(--mut);font-size:13px}.pos{color:var(--green)!important}.neg{color:var(--red)!important}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.sp{justify-content:space-between}
+.hide{display:none!important}
 .lines td input,.lines td select{min-width:90px}
-dialog{border:0;border-radius:12px;padding:0;max-width:640px;width:94%}
-dialog .in{padding:18px}
-dialog::backdrop{background:rgba(10,31,51,.5)}
-.files a{display:inline-block;margin:2px 4px;font-size:13px}
-@media print{header,nav,button,.noprint{display:none!important}main{padding:0}.card{border:0}}
+.pl td:last-child{text-align:left;white-space:nowrap}.pl .sub td{padding-inline-start:26px;color:var(--mut)}
+.bar{height:9px;background:var(--gold);border-radius:5px}
+dialog{border:0;border-radius:12px;padding:0;max-width:720px;width:94%}dialog .in{padding:18px}dialog::backdrop{background:rgba(10,31,51,.5)}
+#busy{position:fixed;inset:auto 16px 16px auto;background:var(--navy);color:#fff;padding:8px 14px;border-radius:8px;font-size:13px}
+@media print{header,nav,button,.noprint,form{display:none!important}main{padding:0}.card{border:0}}
 </style>
 </head>
 <body>
@@ -63,35 +58,44 @@ dialog::backdrop{background:rgba(10,31,51,.5)}
     <label>الباسورد<input type="password" name="password" required dir="ltr" autocomplete="current-password"></label>
     <button class="b">دخول</button><p id="loginErr" style="color:var(--red);margin:0"></p></form></div>
 </div>
+
 <div id="app" class="hide">
 <header>
-  <h1><b>جلوبال</b> للاستيراد والتصدير — المخازن والمديونيات</h1>
+  <h1><b>جلوبال</b> للاستيراد والتصدير — الحسابات والمخازن</h1>
   <div class="rates-mini" id="ratesMini"></div><button class="s" id="logout">خروج</button>
 </header>
 <nav id="nav">
   <button data-t="dash" class="on">الرئيسية <span class="badge hide" id="navBadge"></span></button>
   <button data-t="rates">سعر العملة</button>
-  <button data-t="items">المخزن</button>
+  <button data-t="cash">الخزينة والبنوك</button>
+  <button data-t="exp">المصروفات</button>
+  <button data-t="stock">المخازن</button>
   <button data-t="ships">الشحنات والمستندات</button>
-  <button data-t="sales">البيع</button>
-  <button data-t="debts">المديونيات والتحصيل</button>
+  <button data-t="sales">المبيعات</button>
+  <button data-t="debts">التحصيل والمديونيات</button>
   <button data-t="custs">العملاء</button>
-  <button data-t="backup">نسخة احتياطية</button>
+  <button data-t="sups">الموردين</button>
+  <button data-t="pl">الأرباح والخسائر</button>
+  <button data-t="set">الإعدادات</button>
 </nav>
 <main>
 
 <!-- DASHBOARD -->
 <section id="t-dash">
-  <div id="dueAlerts"></div>
+  <div id="dashAlerts"></div>
   <div class="kpis" id="kpis"></div>
-  <div class="card"><h2>تحصيلات الأيام الجاية (30 يوم)</h2><div class="tw" id="dashDue"></div></div>
+  <div class="two">
+    <div class="card"><h2>أرصدة الخزينة والبنوك</h2><div class="tw" id="dAcc"></div></div>
+    <div class="card"><h2>مصروفات الشهر حسب البند</h2><div id="dExp"></div></div>
+  </div>
+  <div class="card"><h2>تحصيلات الـ 30 يوم الجايين</h2><div class="tw" id="dDue"></div></div>
 </section>
 
 <!-- RATES -->
 <section id="t-rates" class="hide">
   <div class="card">
     <h2>سعر الصرف من البنك المركزي المصري</h2>
-    <p class="mut">افتح موقع البنك المركزي، خد سعر <b>البيع</b> للدولار واليورو، واكتبه هنا. كل حسابات المخزن والمديونيات بتتحسب على آخر سعر متسجل.</p>
+    <p class="mut">خد سعر <b>البيع</b> للدولار واليورو من موقع البنك المركزي واكتبه هنا. كل التحويلات بتتحسب على آخر سعر متسجل.</p>
     <p><a href="https://www.cbe.org.eg/ar/economic-research/statistics/cbe-exchange-rates" target="_blank" rel="noopener"><button class="b g" type="button">افتح أسعار البنك المركزي ↗</button></a></p>
     <form class="grid" id="fRate">
       <label>التاريخ<input type="date" name="date" required></label>
@@ -103,30 +107,95 @@ dialog::backdrop{background:rgba(10,31,51,.5)}
   <div class="card"><h2>سجل الأسعار</h2><div class="tw" id="ratesTbl"></div></div>
 </section>
 
-<!-- ITEMS -->
-<section id="t-items" class="hide">
+<!-- CASH -->
+<section id="t-cash" class="hide">
   <div class="card">
-    <h2 id="itemFormTitle">إضافة صنف</h2>
-    <form class="grid" id="fItem">
-      <input type="hidden" name="rid">
-      <label>كود الصنف<input name="code"></label>
-      <label>اسم الصنف<input name="name" required></label>
-      <label>القسم<select name="cat"><option>جولف كار</option><option>معدات غوص</option><option>قطع غيار</option><option>أخرى</option></select></label>
-      <label>الوحدة<input name="unit" value="قطعة"></label>
-      <label>الكمية الافتتاحية<input type="number" step="any" name="qty0" value="0"></label>
-      <label>تكلفة الوحدة<input type="number" step="any" name="cost" value="0"></label>
-      <label>عملة الشراء<select name="costCur"><option>USD</option><option>EUR</option><option>EGP</option></select></label>
-      <label>سعر البيع (يورو)<input type="number" step="any" name="sellEur" value="0"></label>
-      <label>حد إعادة الطلب<input type="number" step="any" name="min" value="0"></label>
-      <div class="row"><button class="b">حفظ</button><button class="b o" type="button" id="itemCancel">جديد</button></div>
+    <h2>تسجيل حركة فلوس</h2>
+    <form class="grid" id="fCash">
+      <label>النوع<select name="kind" id="cashKind">
+        <option value="pay">دفع لمورد</option>
+        <option value="shipc">دفع مصاريف شحنة (شحن/جمارك/تخليص)</option>
+        <option value="xfer">تحويل بين حسابات / شراء عملة</option>
+        <option value="in">إيراد آخر</option>
+        <option value="dep">إيداع رأس مال / تمويل</option>
+        <option value="wd">مسحوبات شخصية</option></select></label>
+      <label>التاريخ<input type="date" name="date" required></label>
+      <label>من/إلى حساب<select name="acc" class="accSel"></select></label>
+      <label class="k-xfer">إلى حساب<select name="to" class="accSel"></select></label>
+      <label class="k-pay">المورد<select name="party" class="supSel"></select></label>
+      <label class="k-shipc">الشحنة<select name="ship" class="shipSel"></select></label>
+      <label>المبلغ (بعملة الحساب)<input type="number" step="any" name="amount" required></label>
+      <label class="k-xfer">المبلغ اللي وصل (بعملة الحساب التاني)<input type="number" step="any" name="amountTo" placeholder="يتحسب تلقائي"></label>
+      <label>البيان<input name="note"></label>
+      <button class="b">حفظ</button>
+    </form>
+    <p class="mut">تحصيل فلوس العملاء بيتسجل من تبويب "التحصيل والمديونيات". مصاريف الشحنات بتدخل في تكلفة البضاعة، مش في المصروفات.</p>
+  </div>
+  <div class="card"><h2>الحسابات</h2><div class="tw" id="accTbl"></div></div>
+  <div class="card"><div class="row sp"><h2>حركة الفلوس</h2><select id="cashFilter" style="width:auto"></select></div><div class="tw" id="cashTbl"></div></div>
+</section>
+
+<!-- EXPENSES -->
+<section id="t-exp" class="hide">
+  <div class="card">
+    <h2>تسجيل مصروف</h2>
+    <form class="grid" id="fExp">
+      <label>البند<select name="cat" id="expCat"></select></label>
+      <label>التاريخ<input type="date" name="date" required></label>
+      <label>اتدفع من<select name="acc" class="accSel"></select></label>
+      <label>المبلغ (بعملة الحساب)<input type="number" step="any" name="amount" required></label>
+      <label>البيان<input name="note"></label>
+      <button class="b">حفظ</button>
     </form>
   </div>
-  <div class="card">
-    <div class="row" style="justify-content:space-between"><h2>رصيد المخزن وقيمته</h2>
-      <div class="row noprint"><input id="itemSearch" placeholder="بحث..." style="width:180px"><button class="s" onclick="window.print()">طباعة</button></div></div>
-    <div class="tw" id="itemsTbl"></div>
-    <p class="mut">التكلفة بالجنيه = الكمية × متوسط تكلفة الوحدة × سعر عملة الشراء. قيمة البيع = الكمية × سعر البيع باليورو × سعر اليورو.</p>
+  <div class="card"><div class="row sp"><h2>المصروفات</h2><input type="month" id="expMonth" style="width:auto"></div><div class="tw" id="expTbl"></div></div>
+</section>
+
+<!-- STOCK -->
+<section id="t-stock" class="hide">
+  <div class="kpis" id="stKpis"></div>
+  <div class="card"><div class="row sp"><h2 style="margin:0">رصيد الأصناف في كل مخزن</h2><div class="row noprint"><input id="stSearch" placeholder="بحث..." style="width:180px"><button class="s" onclick="window.print()">طباعة</button></div></div>
+    <div class="tw" id="stTbl" style="margin-top:12px"></div>
+    <p class="mut">متوسط التكلفة بالجنيه شامل الشحن والجمارك والتخليص. قيمة البيع = سعر البيع باليورو × سعر اليورو.</p></div>
+  <div class="two">
+    <div class="card"><h2>تحويل بين المخازن</h2>
+      <form class="grid" id="fXfer">
+        <label>الصنف<select name="item" class="itSel" required></select></label>
+        <label>من<select name="from" class="whSel"></select></label>
+        <label>إلى<select name="to" class="whSel"></select></label>
+        <label>الكمية<input type="number" step="any" name="qty" required></label>
+        <button class="b">تحويل</button></form></div>
+    <div class="card"><h2>جرد / تسوية</h2>
+      <form class="grid" id="fAdj">
+        <label>الصنف<select name="item" class="itSel" required></select></label>
+        <label>المخزن<select name="wh" class="whSel"></select></label>
+        <label>الرصيد الفعلي بعد العد<input type="number" step="any" name="qty" required></label>
+        <button class="b">تسوية</button></form>
+      <p class="mut">العجز بيظهر في الأرباح والخسائر كـ "عجز جرد".</p></div>
   </div>
+  <div class="two">
+    <div class="card"><h2 id="itemFormTitle">إضافة صنف</h2>
+      <form class="grid" id="fItem"><input type="hidden" name="rid">
+        <label>الكود<input name="code"></label>
+        <label>اسم الصنف<input name="name" required></label>
+        <label>القسم<select name="cat"><option>جولف كار</option><option>معدات غوص</option><option>قطع غيار</option><option>أخرى</option></select></label>
+        <label>الوحدة<input name="unit" value="قطعة"></label>
+        <label>سعر البيع (يورو)<input type="number" step="any" name="sell" value="0"></label>
+        <label>حد إعادة الطلب<input type="number" step="any" name="min" value="0"></label>
+        <div class="row"><button class="b">حفظ</button><button class="b o" type="button" id="itemNew">جديد</button></div></form>
+      <hr style="border:0;border-top:1px solid var(--line);margin:14px 0">
+      <h2>رصيد افتتاحي لصنف</h2>
+      <form class="grid" id="fOpen">
+        <label>الصنف<select name="item" class="itSel" required></select></label>
+        <label>المخزن<select name="wh" class="whSel"></select></label>
+        <label>الكمية<input type="number" step="any" name="qty" required></label>
+        <label>تكلفة الوحدة (جنيه)<input type="number" step="any" name="cost" required></label>
+        <button class="b">إضافة</button></form></div>
+    <div class="card"><h2>المخازن</h2>
+      <form class="grid" id="fWh"><label>اسم مخزن جديد<input name="name" required></label><button class="b">إضافة</button></form>
+      <div class="tw" id="whTbl" style="margin-top:10px"></div></div>
+  </div>
+  <div class="card"><h2>حركة المخازن</h2><div class="tw" id="smTbl"></div></div>
 </section>
 
 <!-- SHIPMENTS -->
@@ -137,18 +206,29 @@ dialog::backdrop{background:rgba(10,31,51,.5)}
       <div class="grid">
         <label>رقم الشحنة / البوليصة<input name="no" required></label>
         <label>التاريخ<input type="date" name="date" required></label>
-        <label>المورد<input name="supplier"></label>
-        <label>عملة الشراء<select name="cur"><option>USD</option><option>EUR</option><option>EGP</option></select></label>
-        <label>سعر الصرف وقت الشحنة<input type="number" step="any" name="rate" placeholder="يتملأ تلقائي"></label>
-        <label>مصاريف (شحن+جمارك+تخليص) بالجنيه<input type="number" step="any" name="exp" value="0"></label>
+        <label>المورد<select name="sup" class="supSel" id="shipSup"></select></label>
+        <label>عملة الفاتورة<select name="cur" id="shipCur"><option>USD</option><option>EUR</option><option>EGP</option></select></label>
+        <label>سعر الصرف<input type="number" step="any" name="rate" id="shipRate" required></label>
+        <label>يدخل مخزن<select name="wh" class="whSel"></select></label>
       </div>
       <h2 style="margin-top:16px">الأصناف</h2>
-      <div class="tw"><table class="lines"><thead><tr><th>الصنف</th><th>الكمية</th><th>سعر الوحدة (بعملة الشراء)</th><th></th></tr></thead><tbody id="shipLines"></tbody></table></div>
-      <button class="s" type="button" id="addLine">+ سطر</button>
+      <div class="tw"><table class="lines"><thead><tr><th>الصنف</th><th>الكمية</th><th>سعر الوحدة (بعملة الفاتورة)</th><th></th></tr></thead><tbody id="shipLines"></tbody></table></div>
+      <button class="s" type="button" id="addShipLine">+ سطر</button>
+      <h2 style="margin-top:16px">مصاريف الشحنة (بالجنيه)</h2>
+      <div class="grid">
+        <label>شحن<input type="number" step="any" name="freight" value="0"></label>
+        <label>تأمين<input type="number" step="any" name="insurance" value="0"></label>
+        <label>جمارك<input type="number" step="any" name="customs" value="0"></label>
+        <label>تخليص وأرضيات<input type="number" step="any" name="clearance" value="0"></label>
+        <label>نقل داخلي<input type="number" step="any" name="transport" value="0"></label>
+        <label>مصاريف تانية<input type="number" step="any" name="other" value="0"></label>
+        <label>ضريبة قيمة مضافة (للعلم)<input type="number" step="any" name="vat" value="0"></label>
+      </div>
       <h2 style="margin-top:16px">مستندات الشحنة</h2>
-      <label>اختار الملفات من الجهاز (فاتورة، بوليصة، شهادة منشأ، إقرار جمركي... PDF أو صور)<input type="file" name="files" multiple></label>
+      <label>اختار الملفات من الجهاز (فاتورة، بوليصة، شهادة منشأ، إقرار جمركي...)<input type="file" name="files" multiple></label>
       <label style="margin-top:8px">ملاحظات<textarea name="notes" rows="2"></textarea></label>
-      <p><button class="b">حفظ الشحنة وإضافتها للمخزن</button></p>
+      <p class="mut">عند الحفظ: الكميات بتدخل المخزن بتكلفة شاملة كل المصاريف، وقيمة البضاعة بتتسجل فاتورة على حساب المورد.</p>
+      <button class="b">حفظ الشحنة</button>
     </form>
   </div>
   <div class="card"><h2>الشحنات</h2><div class="tw" id="shipsTbl"></div></div>
@@ -160,21 +240,22 @@ dialog::backdrop{background:rgba(10,31,51,.5)}
     <h2>فاتورة بيع</h2>
     <form id="fSale">
       <div class="grid">
-        <label>العميل<select name="cust" required id="saleCust"></select></label>
+        <label>العميل<select name="cust" class="custSel" required></select></label>
         <label>التاريخ<input type="date" name="date" required></label>
         <label>رقم الفاتورة<input name="no"></label>
-        <label>عملة الفاتورة<select name="cur"><option>EUR</option><option>USD</option><option>EGP</option></select></label>
+        <label>عملة الفاتورة<select name="cur" id="saleCur"><option>EUR</option><option>USD</option><option>EGP</option></select></label>
       </div>
-      <div class="tw"><table class="lines"><thead><tr><th>الصنف</th><th>الكمية</th><th>سعر الوحدة</th><th>الإجمالي</th><th></th></tr></thead><tbody id="saleLines"></tbody></table></div>
+      <div class="tw"><table class="lines"><thead><tr><th>الصنف</th><th>من مخزن</th><th>الكمية</th><th>سعر الوحدة</th><th>الإجمالي</th><th></th></tr></thead><tbody id="saleLines"></tbody></table></div>
       <button class="s" type="button" id="addSaleLine">+ سطر</button>
       <div class="grid" style="margin-top:12px">
         <label>الإجمالي<input name="total" readonly></label>
         <label>المدفوع الآن<input type="number" step="any" name="paid" value="0"></label>
-        <label>عدد الأقساط للباقي<input type="number" min="1" name="inst" value="1"></label>
+        <label>اتدفع في حساب<select name="paidAcc" class="accSel"></select></label>
+        <label>عدد أقساط الباقي<input type="number" min="1" name="inst" value="1"></label>
         <label>ميعاد أول قسط<input type="date" name="due1"></label>
         <label>كل كام يوم<input type="number" name="every" value="30"></label>
       </div>
-      <p class="mut">الباقي بيتسجل مديونية على العميل بمواعيد التحصيل، وبيظهرلك تنبيه قبل كل ميعاد.</p>
+      <p class="mut">الكمية بتتخصم من المخزن، والتكلفة والربح بيتحسبوا لوحدهم، والباقي بيتسجل مديونية بمواعيد تحصيل وتنبيه.</p>
       <button class="b">حفظ الفاتورة</button>
     </form>
   </div>
@@ -186,8 +267,8 @@ dialog::backdrop{background:rgba(10,31,51,.5)}
   <div class="card">
     <h2>إضافة مديونية يدوي</h2>
     <form class="grid" id="fDebt">
-      <label>العميل<select name="cust" required id="debtCust"></select></label>
-      <label>البيان<input name="desc" placeholder="مثلاً: باقي فاتورة 15"></label>
+      <label>العميل<select name="cust" class="custSel" required></select></label>
+      <label>البيان<input name="desc" placeholder="مثلاً: رصيد قديم"></label>
       <label>المبلغ<input type="number" step="any" name="amount" required></label>
       <label>العملة<select name="cur"><option>EUR</option><option>USD</option><option>EGP</option></select></label>
       <label>ميعاد التحصيل<input type="date" name="due" required></label>
@@ -195,7 +276,7 @@ dialog::backdrop{background:rgba(10,31,51,.5)}
     </form>
   </div>
   <div class="card">
-    <div class="row" style="justify-content:space-between"><h2>المديونيات المعلقة</h2>
+    <div class="row sp"><h2>المديونيات</h2>
       <div class="row noprint"><select id="debtFilter" style="width:auto"><option value="open">المعلق فقط</option><option value="all">الكل</option></select>
       <button class="s" id="icsAll">تنبيهات التقويم لكل المعلق (.ics)</button><button class="s" onclick="window.print()">طباعة</button></div></div>
     <div class="tw" id="debtsTbl"></div>
@@ -206,9 +287,8 @@ dialog::backdrop{background:rgba(10,31,51,.5)}
 <!-- CUSTOMERS -->
 <section id="t-custs" class="hide">
   <div class="card">
-    <h2>إضافة عميل</h2>
-    <form class="grid" id="fCust">
-      <input type="hidden" name="rid">
+    <h2>إضافة / تعديل عميل</h2>
+    <form class="grid" id="fCust"><input type="hidden" name="rid">
       <label>الاسم / الشركة<input name="name" required></label>
       <label>الموبايل (واتساب)<input name="phone" dir="ltr" placeholder="2010xxxxxxxx"></label>
       <label>العنوان<input name="addr"></label>
@@ -219,312 +299,483 @@ dialog::backdrop{background:rgba(10,31,51,.5)}
   <div class="card"><h2>العملاء</h2><div class="tw" id="custsTbl"></div></div>
 </section>
 
-<!-- BACKUP -->
-<section id="t-backup" class="hide">
-  <div class="card">
-    <h2>نسخة احتياطية</h2>
-    <p class="mut">البيانات والمستندات محفوظة أونلاين. النسخة الاحتياطية هنا للاحتياط بس (بيانات بدون الملفات). وتقدر من "استرجاع من نسخة" تنقل البيانات من البرنامج القديم اللي على الجهاز، بالمستندات.</p>
-    <div class="row"><button class="b g" id="doBackup">تنزيل نسخة احتياطية</button>
-    <label class="b o" style="flex-direction:row;cursor:pointer;color:var(--navy)">استرجاع من نسخة<input type="file" id="doRestore" accept=".json" style="display:none"></label></div>
-    <p class="mut" id="lastBackup"></p>
+<!-- SUPPLIERS -->
+<section id="t-sups" class="hide">
+  <div class="two">
+    <div class="card"><h2>إضافة / تعديل مورد</h2>
+      <form class="grid" id="fSup"><input type="hidden" name="rid">
+        <label>اسم المورد<input name="name" required></label>
+        <label>عملة التعامل<select name="cur"><option>USD</option><option>EUR</option><option>EGP</option></select></label>
+        <label>تليفون / إيميل<input name="contact"></label>
+        <button class="b">حفظ</button></form></div>
+    <div class="card"><h2>فاتورة مورد يدوي</h2>
+      <form class="grid" id="fPur">
+        <label>المورد<select name="sup" class="supSel" required></select></label>
+        <label>التاريخ<input type="date" name="date" required></label>
+        <label>المبلغ (بعملة المورد)<input type="number" step="any" name="amount" required></label>
+        <label>البيان<input name="note"></label>
+        <button class="b">حفظ</button></form>
+      <p class="mut">فواتير الشحنات بتتسجل لوحدها. استخدم ده لأي فاتورة تانية زي رصيد قديم.</p></div>
   </div>
-  <div class="card">
-    <h2>الإعدادات</h2>
-    <form class="grid" id="fSet">
-      <label>التنبيه قبل الميعاد بكام يوم<input type="number" min="2" name="days" value="2"></label>
-      <label>اسم الشركة في رسالة التذكير<input name="company" value="جلوبال للاستيراد والتصدير"></label>
-      <button class="b">حفظ</button>
-    </form>
+  <div class="card"><h2>أرصدة الموردين (علينا)</h2><div class="tw" id="supsTbl"></div></div>
+</section>
+
+<!-- P&L -->
+<section id="t-pl" class="hide">
+  <div class="card"><div class="row sp"><h2 id="plTitle" style="margin:0">قائمة الأرباح والخسائر</h2><div class="row noprint"><input type="month" id="plMonth" style="width:auto"><button class="s" onclick="window.print()">طباعة</button></div></div></div>
+  <div class="card"><div class="tw" id="plTbl"></div></div>
+</section>
+
+<!-- SETTINGS -->
+<section id="t-set" class="hide">
+  <div class="two">
+    <div class="card"><h2>الحسابات (خزينة وبنوك)</h2>
+      <form class="grid" id="fAcc"><input type="hidden" name="rid">
+        <label>اسم الحساب<input name="name" required placeholder="مثلاً: بنك مصر — دولار"></label>
+        <label>العملة<select name="cur"><option>EGP</option><option>USD</option><option>EUR</option></select></label>
+        <label>رصيد أول المدة<input type="number" step="any" name="open" value="0"></label>
+        <button class="b">حفظ</button></form>
+      <div class="tw" id="accSetTbl" style="margin-top:10px"></div></div>
+    <div class="card"><h2>إعدادات عامة</h2>
+      <form class="grid" id="fSet">
+        <label>التنبيه قبل ميعاد التحصيل بكام يوم<input type="number" min="2" name="days" value="2"></label>
+        <label>اسم الشركة في رسالة التذكير<input name="company"></label>
+        <label style="grid-column:1/-1">بنود المصروفات (افصل بينهم بفاصلة ،)<input name="cats"></label>
+        <button class="b">حفظ</button></form></div>
   </div>
+  <div class="card"><h2>نسخة احتياطية</h2>
+    <p class="mut">البيانات والمستندات محفوظة أونلاين. النسخة الاحتياطية دي زيادة أمان (البيانات من غير الملفات).</p>
+    <div class="row"><button class="b g" id="doBackup">تنزيل نسخة احتياطية</button></div>
+    <p class="mut" id="lastBackup"></p></div>
 </section>
 </main>
-
 </div>
+
 <dialog id="dlg"><div class="in" id="dlgIn"></div></dialog>
+<div id="busy" class="hide">جاري الحفظ...</div>
 
 <script src="supabase.js"></script>
 <script>
-/* ========== storage (Supabase) ========== */
+/* ===================== storage ===================== */
 const SB_URL="https://inbehmycdjzowdaorzig.supabase.co", SB_KEY="sb_publishable_Zn2wcEE4iyKb604L2NNXig_oyw_x0ST";
 const sb=supabase.createClient(SB_URL,SB_KEY);
-const STORES=["rates","items","ships","files","custs","sales","debts","moves","settings"];
+const P="g_"; // prefix of new stores
+const STORES=["rates","acc","wh","items","sup","cust","smv","ships","purch","sales","debts","cash","files","set"];
+const OLD=["rates","items","ships","files","custs","sales","debts","moves","settings"];
 const CACHE={};
+let busyN=0;const busy=on=>{busyN+=on?1:-1;document.getElementById("busy").classList.toggle("hide",busyN<=0)};
 function chk(r){if(r.error){alert("خطأ في الحفظ أونلاين: "+r.error.message);throw r.error}return r}
-async function fetchAll(){STORES.forEach(x=>CACHE[x]={});let from=0;
+async function fetchAll(){let from=0;
   for(;;){const r=chk(await sb.from("records").select("store,id,data").range(from,from+999));
     r.data.forEach(x=>{(CACHE[x.store]=CACHE[x.store]||{})[x.id]=x.data});if(r.data.length<1000)break;from+=1000}}
-async function all(s){return Object.values(CACHE[s]||{})}
-async function get(s,id){return (CACHE[s]||{})[id]}
+const L=s=>Object.values(CACHE[P+s]||{});
+const G=(s,id)=>(CACHE[P+s]||{})[id];
 const safeName=n=>n.replace(/[^\w.\-]+/g,"_").slice(-80);
-async function put(s,o){o={...o};
+async function put(s,o){o={...o};busy(1);try{
   if(s==="files"&&o.blob){const path=`${o.ship||"misc"}/${o.id}-${safeName(o.name||"file")}`;
     chk(await sb.storage.from("docs").upload(path,o.blob,{upsert:true,contentType:o.type||undefined}));o.path=path;delete o.blob}
-  chk(await sb.from("records").upsert({store:s,id:o.id,data:o,updated_at:new Date().toISOString()}));
-  (CACHE[s]=CACHE[s]||{})[o.id]=o;return o}
-async function del(s,id){const o=(CACHE[s]||{})[id];
+  chk(await sb.from("records").upsert({store:P+s,id:String(o.id),data:o,updated_at:new Date().toISOString()}));
+  (CACHE[P+s]=CACHE[P+s]||{})[o.id]=o;return o}finally{busy(0)}}
+async function del(s,id){const o=G(s,id);busy(1);try{
   if(s==="files"&&o&&o.path)await sb.storage.from("docs").remove([o.path]);
-  chk(await sb.from("records").delete().eq("store",s).eq("id",id));if(CACHE[s])delete CACHE[s][id]}
-async function clearStore(s){if(s==="files"){const ps=Object.values(CACHE.files||{}).map(x=>x.path).filter(Boolean);if(ps.length)await sb.storage.from("docs").remove(ps)}
-  chk(await sb.from("records").delete().eq("store",s));CACHE[s]={}}
+  chk(await sb.from("records").delete().eq("store",P+s).eq("id",String(id)));if(CACHE[P+s])delete CACHE[P+s][id]}finally{busy(0)}}
 const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,7);
 
-/* ========== state & helpers ========== */
-let S={rates:[],items:[],ships:[],custs:[],sales:[],debts:[],moves:[],set:{days:2,company:"جلوبال للاستيراد والتصدير"}};
-const $=q=>document.querySelector(q);
+/* ===================== helpers ===================== */
+const $=q=>document.querySelector(q), $$=q=>[...document.querySelectorAll(q)];
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const isoL=d=>`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;
 const addDays=(iso,n)=>{const d=new Date(iso+"T00:00:00");d.setDate(d.getDate()+n);return isoL(d)};
 const today=()=>isoL(new Date());
 const daysTo=iso=>Math.round((new Date(iso+"T00:00:00")-new Date(today()+"T00:00:00"))/864e5);
 const f2=n=>(+n||0).toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2});
+const fq=n=>(+n||0).toLocaleString("en-US",{maximumFractionDigits:3});
 const fd=iso=>iso?iso.split("-").reverse().join("/"):"";
-function rate(){return S.rates.slice().sort((a,b)=>b.date.localeCompare(a.date))[0]||null}
-function toEGP(v,cur,r=rate()){if(cur==="EGP")return v;if(!r)return NaN;return v*(cur==="USD"?r.usd:r.eur)}
-function egpTo(v,cur,r=rate()){if(cur==="EGP")return v;if(!r)return NaN;return v/(cur==="USD"?r.usd:r.eur)}
-const curSym={EGP:"ج.م",USD:"$",EUR:"€"};
-const money=(v,c)=>isNaN(v)?"—":`${f2(v)} ${curSym[c]}`;
+const sym={EGP:"ج.م",USD:"$",EUR:"€"};
+const money=(v,c="EGP")=>isNaN(v)?"—":`<span class="${v<-0.004?'neg':''}">${f2(v)} ${sym[c]}</span>`;
+const fdata=f=>Object.fromEntries(new FormData(f).entries());
+let SET={days:2,company:"جلوبال للاستيراد والتصدير",cats:["إيجار","مرتبات","كهربا ومياه","إعلانات","نقل ومواصلات","عمولات","صيانة","مصاريف بنكية","ضرايب ورسوم","أخرى"]};
 
-/* stock from moves */
-function stockOf(itemId){return S.moves.filter(m=>m.item===itemId).reduce((t,m)=>t+m.qty,0)}
-/* weighted avg cost (in item's cost currency) from incoming moves */
-function avgCost(it){const ins=S.moves.filter(m=>m.item===it.id&&m.qty>0&&m.cost!=null);
-  const q=ins.reduce((t,m)=>t+m.qty,0);if(!q)return +it.cost||0;
-  return ins.reduce((t,m)=>t+m.qty*m.cost,0)/q}
-function debtPaid(d){return (d.pays||[]).reduce((t,p)=>t+(+p.amount||0),0)}
-function debtLeft(d){return Math.max(0,(+d.amount||0)-debtPaid(d))}
-function custName(id){return (S.custs.find(c=>c.id===id)||{}).name||"—"}
-function custPhone(id){return ((S.custs.find(c=>c.id===id)||{}).phone||"").replace(/\D/g,"")}
+function rate(){return L("rates").sort((a,b)=>b.date.localeCompare(a.date))[0]||null}
+function rv(c,r=rate()){if(c==="EGP")return 1;if(!r)return NaN;return c==="USD"?+r.usd:+r.eur}
+const toE=(v,c,r)=>v*rv(c,r), fromE=(v,c,r)=>v/rv(c,r);
+function needRate(){if(rate())return true;alert("سجّل سعر الدولار واليورو الأول من تبويب سعر العملة");show("rates");return false}
+const acc=id=>G("acc",id)||{name:"—",cur:"EGP"}, wh=id=>G("wh",id)||{name:"—"}, item=id=>G("items",id)||{name:"؟"},
+      sup=id=>G("sup",id)||{name:"—",cur:"EGP"}, cust=id=>G("cust",id)||{name:"—"};
+const byName=(a,b)=>String(a.name).localeCompare(String(b.name),"ar");
 
-async function load(){await fetchAll();for(const s of ["rates","items","ships","custs","sales","debts","moves"])S[s]=await all(s);
-  const st=await get("settings","main");if(st)S.set=Object.assign(S.set,st)}
+/* stock */
+const qtyOf=(it,w)=>L("smv").reduce((t,m)=>t+(m.item==it&&(w==null||m.wh==w)?+m.qty:0),0);
+function avgCost(it){let q=0,v=0;L("smv").forEach(m=>{if(m.item==it&&m.qty>0&&m.cost!=null){q+=+m.qty;v+=m.qty*m.cost}});return q?v/q:0}
+const stockValue=()=>L("items").reduce((t,i)=>t+qtyOf(i.id)*avgCost(i.id),0);
+/* cash */
+function accBal(a){let b=+a.open||0;L("cash").forEach(m=>{const v=+m.amount;
+  if(m.acc==a.id)b+=["rcpt","in","dep"].includes(m.kind)?v:-v;
+  if(m.kind==="xfer"&&m.to==a.id)b+=+m.amountTo});return b}
+const cashTotal=()=>L("acc").reduce((t,a)=>t+toE(accBal(a),a.cur),0);
+/* debts */
+const debtPaid=d=>(d.pays||[]).reduce((t,p)=>t+(+p.amount||0),0);
+const debtLeft=d=>Math.max(0,(+d.amount||0)-debtPaid(d));
+const recvTotal=()=>L("debts").reduce((t,d)=>t+toE(debtLeft(d),d.cur),0);
+/* suppliers */
+function supBal(s){const pur=L("purch").filter(p=>p.sup==s.id).reduce((t,p)=>t+ +p.amount,0);
+  const paid=L("cash").filter(m=>m.kind==="pay"&&m.party==s.id).reduce((t,m)=>t+ +m.amountSup,0);return {pur,paid,bal:pur-paid}}
+const payTotal=()=>L("sup").reduce((t,s)=>t+toE(supBal(s).bal,s.cur),0);
+/* P&L */
+function pl(month){const inM=x=>(x.date||"").startsWith(month);
+  const sales=L("sales").filter(inM);const rev=sales.reduce((t,s)=>t+ +s.egp,0),cogs=sales.reduce((t,s)=>t+ +s.cogs,0);
+  const other=L("cash").filter(m=>m.kind==="in"&&inM(m)).reduce((t,m)=>t+ +m.egp,0);
+  const ex={};L("cash").filter(m=>m.kind==="exp"&&inM(m)).forEach(m=>ex[m.cat]=(ex[m.cat]||0)+ +m.egp);
+  const loss=L("smv").filter(m=>m.loss&&inM(m)).reduce((t,m)=>t+ +m.loss,0);if(loss)ex["عجز جرد مخزون"]=loss;
+  const exT=Object.values(ex).reduce((a,b)=>a+b,0);
+  return {rev,cogs,gross:rev-cogs,other,ex,exT,net:rev-cogs+other-exT,n:sales.length}}
 
-/* ========== tabs ========== */
-document.querySelectorAll("#nav button").forEach(b=>b.onclick=()=>show(b.dataset.t));
-function show(t){document.querySelectorAll("#nav button").forEach(b=>b.classList.toggle("on",b.dataset.t===t));
-  document.querySelectorAll("main>section").forEach(s=>s.classList.toggle("hide",s.id!=="t-"+t));render()}
+/* ===================== tabs ===================== */
+$$("#nav button").forEach(b=>b.onclick=()=>show(b.dataset.t));
+function show(t){$$("#nav button").forEach(b=>b.classList.toggle("on",b.dataset.t===t));
+  $$("main>section").forEach(s=>s.classList.toggle("hide",s.id!=="t-"+t));window.scrollTo(0,0)}
 
-/* ========== render ========== */
-function render(){renderRates();renderItems();renderShips();renderCusts();renderSales();renderDebts();renderDash()}
+/* ===================== selects ===================== */
+function opts(list,lab=x=>x.name,blank){return (blank?`<option value="">${blank}</option>`:"")+list.map(x=>`<option value="${esc(x.id)}">${esc(lab(x))}</option>`).join("")}
+function fillSel(q,html){$$(q).forEach(s=>{const v=s.value;s.innerHTML=html;if(v&&[...s.options].some(o=>o.value===v))s.value=v})}
+function fillSelects(){
+  fillSel(".accSel",opts(L("acc").sort(byName),a=>`${a.name} (${a.cur})`));
+  fillSel(".whSel",opts(L("wh").sort(byName)));
+  fillSel(".itSel",opts(L("items").sort(byName),i=>i.name+(i.code?` (${i.code})`:""),"— اختار —"));
+  fillSel(".supSel",opts(L("sup").sort(byName),s=>`${s.name} (${s.cur})`,"— اختار —"));
+  fillSel(".custSel",opts(L("cust").sort(byName),c=>c.name,"— اختار —"));
+  fillSel(".shipSel",opts(L("ships").sort((a,b)=>b.date.localeCompare(a.date)),s=>`${s.no} — ${fd(s.date)}`,"— اختار —"));
+  fillSel("#expCat",SET.cats.map(c=>`<option>${esc(c)}</option>`).join(""));
+  fillSel("#cashFilter",`<option value="">كل الحسابات</option>`+opts(L("acc").sort(byName)));
+}
 
-function renderRates(){const r=rate();
-  $("#ratesMini").innerHTML=r?`آخر سعر (${fd(r.date)}): $ ${f2(r.usd)} · € ${f2(r.eur)} جنيه`:`<span style="color:#ffb4a8">⚠ سجّل سعر العملة</span>`;
-  const rows=S.rates.slice().sort((a,b)=>b.date.localeCompare(a.date));
-  $("#ratesTbl").innerHTML=rows.length?`<table><tr><th>التاريخ</th><th>الدولار</th><th>اليورو</th><th>اليورو/دولار</th><th></th></tr>${rows.map(x=>`<tr><td>${fd(x.date)}</td><td>${f2(x.usd)}</td><td>${f2(x.eur)}</td><td>${(x.eur/x.usd).toFixed(4)}</td><td><button class="s" onclick="delRate('${x.id}')">حذف</button></td></tr>`).join("")}</table>`:`<p class="mut">لسه مفيش أسعار.</p>`}
+/* ===================== render ===================== */
+function render(){fillSelects();renderDash();renderRates();renderCash();renderExp();renderStock();renderShips();renderSales();renderDebts();renderCusts();renderSups();renderPL();renderSet()}
 
-function itemRow(it){const q=stockOf(it.id),ac=avgCost(it),r=rate();
-  const costEGP=toEGP(q*ac,it.costCur,r),sellEGP=toEGP(q*(+it.sellEur||0),"EUR",r);
-  return {q,ac,costEGP,sellEGP}}
-function renderItems(){const s=($("#itemSearch").value||"").trim();
-  const list=S.items.filter(i=>!s||(i.name+i.code+i.cat).includes(s));
-  let tc=0,ts=0;
-  const rows=list.map(it=>{const x=itemRow(it);tc+=x.costEGP||0;ts+=x.sellEGP||0;
-    const low=+it.min&&x.q<=+it.min;
-    return `<tr${low?' class="soon"':''}><td>${esc(it.code)}</td><td><b>${esc(it.name)}</b><div class="mut">${esc(it.cat)}</div></td><td>${f2(x.q)} ${esc(it.unit)}${low?' <span class="pill p-soon">قرب يخلص</span>':''}</td><td>${money(x.ac,it.costCur)}</td><td>${money(x.costEGP,"EGP")}</td><td>${money(+it.sellEur,"EUR")}</td><td>${money(x.sellEGP,"EGP")}</td><td class="noprint"><button class="s" onclick="editItem('${it.id}')">تعديل</button><button class="s" onclick="adjItem('${it.id}')">تسوية جرد</button><button class="s" onclick="itemCard('${it.id}')">حركة</button></td></tr>`}).join("");
-  $("#itemsTbl").innerHTML=list.length?`<table><tr><th>كود</th><th>الصنف</th><th>الرصيد</th><th>متوسط التكلفة</th><th>قيمة التكلفة (جنيه)</th><th>سعر البيع</th><th>قيمة البيع (جنيه)</th><th class="noprint"></th></tr>${rows}<tr><th colspan="4">الإجمالي</th><th>${money(tc,"EGP")}</th><th></th><th>${money(ts,"EGP")}</th><th class="noprint"></th></tr></table>`:`<p class="mut">ضيف أول صنف من الفورم اللي فوق.</p>`;
-  fillItemSelects()}
-
-function itemOpts(sel){return `<option value="">— اختار —</option>`+S.items.map(i=>`<option value="${i.id}"${i.id===sel?" selected":""}>${esc(i.name)}${i.code?" ("+esc(i.code)+")":""}</option>`).join("")}
-function fillItemSelects(){document.querySelectorAll("select.itemSel").forEach(s=>{const v=s.value;s.innerHTML=itemOpts(v)})}
-function custOpts(){return `<option value="">— اختار —</option>`+S.custs.map(c=>`<option value="${c.id}">${esc(c.name)}</option>`).join("")}
-
-function renderShips(){const rows=S.ships.slice().sort((a,b)=>b.date.localeCompare(a.date)).map(sh=>{
-  const tot=sh.lines.reduce((t,l)=>t+l.qty*l.cost,0);
-  return `<tr><td><b>${esc(sh.no)}</b></td><td>${fd(sh.date)}</td><td>${esc(sh.supplier)}</td><td>${sh.lines.map(l=>esc((S.items.find(i=>i.id===l.item)||{}).name||"؟")+" × "+l.qty).join("<br>")}</td><td>${money(tot,sh.cur)}<div class="mut">${money(tot*(sh.cur==="EGP"?1:sh.rate)+(+sh.exp||0),"EGP")} شامل المصاريف</div></td><td class="files" id="sf-${sh.id}">${(sh.files||[]).length} ملف</td><td><button class="s" onclick="shipFiles('${sh.id}')">المستندات</button><button class="s" onclick="delShip('${sh.id}')">حذف</button></td></tr>`}).join("");
-  $("#shipsTbl").innerHTML=S.ships.length?`<table><tr><th>رقم الشحنة</th><th>التاريخ</th><th>المورد</th><th>الأصناف</th><th>القيمة</th><th>مستندات</th><th></th></tr>${rows}</table>`:`<p class="mut">مفيش شحنات لسه.</p>`}
-
-function renderCusts(){$("#saleCust").innerHTML=custOpts();$("#debtCust").innerHTML=custOpts();
-  $("#custsTbl").innerHTML=S.custs.length?`<table><tr><th>العميل</th><th>الموبايل</th><th>العنوان</th><th>المديونية المعلقة</th><th></th></tr>${S.custs.map(c=>{const ds=S.debts.filter(d=>d.cust===c.id&&debtLeft(d)>0);
-    return `<tr><td><b>${esc(c.name)}</b><div class="mut">${esc(c.notes)}</div></td><td dir="ltr">${esc(c.phone)}</td><td>${esc(c.addr)}</td><td>${sumByCur(ds)}</td><td><button class="s" onclick="editCust('${c.id}')">تعديل</button><button class="s" onclick="custStatement('${c.id}')">كشف حساب</button></td></tr>`}).join("")}</table>`:`<p class="mut">ضيف العملاء الأول.</p>`}
-function sumByCur(ds){const m={};ds.forEach(d=>m[d.cur]=(m[d.cur]||0)+debtLeft(d));const k=Object.keys(m);return k.length?k.map(c=>money(m[c],c)).join("<br>"):"—"}
-
-function renderSales(){const rows=S.sales.slice().sort((a,b)=>b.date.localeCompare(a.date)).map(s=>`<tr><td>${esc(s.no)}</td><td>${fd(s.date)}</td><td>${esc(custName(s.cust))}</td><td>${s.lines.map(l=>esc((S.items.find(i=>i.id===l.item)||{}).name||"؟")+" × "+l.qty).join("<br>")}</td><td>${money(s.total,s.cur)}</td><td>${money(s.paid,s.cur)}</td><td><button class="s" onclick="delSale('${s.id}')">إلغاء</button></td></tr>`).join("");
-  $("#salesTbl").innerHTML=S.sales.length?`<table><tr><th>رقم</th><th>التاريخ</th><th>العميل</th><th>الأصناف</th><th>الإجمالي</th><th>المدفوع</th><th></th></tr>${rows}</table>`:`<p class="mut">مفيش فواتير لسه.</p>`}
-
-function statusOf(d){const left=debtLeft(d);if(left<=0)return ["p-paid","مدفوع"];const n=daysTo(d.due);
-  if(n<0)return ["p-late",`متأخر ${-n} يوم`];if(n<=S.set.days)return ["p-soon",n===0?"النهارده":`باقي ${n} يوم`];return ["p-ok",`باقي ${n} يوم`]}
-function debtRow(d,actions=true){const [cls,txt]=statusOf(d),left=debtLeft(d),r=rate();
-  const egp=d.cur==="EGP"?"":`<div class="mut">≈ ${money(toEGP(left,d.cur,r),"EGP")}</div>`;
-  const tr=cls==="p-late"?' class="late"':cls==="p-soon"?' class="soon"':'';
-  return `<tr${tr}><td>${fd(d.due)}</td><td><b>${esc(custName(d.cust))}</b></td><td>${esc(d.desc)}</td><td>${money(+d.amount,d.cur)}</td><td>${money(debtPaid(d),d.cur)}</td><td><b>${money(left,d.cur)}</b>${egp}</td><td><span class="pill ${cls}">${txt}</span></td>${actions?`<td class="noprint">${left>0?`<button class="s" onclick="payDebt('${d.id}')">تحصيل</button><button class="s wa" onclick="waRemind('${d.id}')">تذكير واتساب</button><button class="s" onclick="icsOne('${d.id}')">تقويم</button><button class="s" onclick="moveDue('${d.id}')">تأجيل</button>`:""}<button class="s" onclick="delDebt('${d.id}')">حذف</button></td>`:""}</tr>`}
+function statusOf(d){if(debtLeft(d)<=0)return ["p-ok","مدفوع"];const n=daysTo(d.due);
+  if(n<0)return ["p-late",`متأخر ${-n} يوم`];if(n<=SET.days)return ["p-soon",n===0?"النهارده":`باقي ${n} يوم`];return ["",`باقي ${n} يوم`]}
 const debtHead=(a=true)=>`<tr><th>ميعاد التحصيل</th><th>العميل</th><th>البيان</th><th>المبلغ</th><th>المحصّل</th><th>الباقي</th><th>الحالة</th>${a?'<th class="noprint"></th>':""}</tr>`;
-function renderDebts(){const f=$("#debtFilter").value;const list=S.debts.filter(d=>f==="all"||debtLeft(d)>0).sort((a,b)=>a.due.localeCompare(b.due));
-  $("#debtsTbl").innerHTML=list.length?`<table>${debtHead()}${list.map(d=>debtRow(d)).join("")}</table>`:`<p class="mut">مفيش مديونيات معلقة 👌</p>`;
-  const by={};S.debts.filter(d=>debtLeft(d)>0).forEach(d=>(by[d.cust]=by[d.cust]||[]).push(d));
-  const r=rate();
-  $("#perCust").innerHTML=Object.keys(by).length?`<table><tr><th>العميل</th><th>الباقي</th><th>الإجمالي بالجنيه</th><th>أقرب ميعاد</th></tr>${Object.entries(by).map(([c,ds])=>`<tr><td>${esc(custName(c))}</td><td>${sumByCur(ds)}</td><td>${money(ds.reduce((t,d)=>t+toEGP(debtLeft(d),d.cur,r),0),"EGP")}</td><td>${fd(ds.map(d=>d.due).sort()[0])}</td></tr>`).join("")}</table>`:`<p class="mut">—</p>`}
-
-function renderDash(){const r=rate();
-  const open=S.debts.filter(d=>debtLeft(d)>0);
-  const late=open.filter(d=>daysTo(d.due)<0), soon=open.filter(d=>{const n=daysTo(d.due);return n>=0&&n<=S.set.days});
-  let alerts="";
-  if(!r)alerts+=`<div class="alert red">⚠ لسه ما سجلتش سعر الدولار واليورو — <a href="#" onclick="show('rates');return false">سجّله من هنا</a></div>`;
-  else if(daysTo(r.date)<0)alerts+=`<div class="alert">آخر سعر عملة متسجل بتاريخ ${fd(r.date)} — <a href="#" onclick="show('rates');return false">حدّث سعر النهارده من البنك المركزي</a></div>`;
-  if(late.length)alerts+=`<div class="alert red"><b>🔴 ${late.length} مديونية متأخرة عن ميعادها</b><div class="tw"><table>${debtHead()}${late.sort((a,b)=>a.due.localeCompare(b.due)).map(d=>debtRow(d)).join("")}</table></div></div>`;
-  if(soon.length)alerts+=`<div class="alert"><b>🔔 ${soon.length} تحصيل ميعاده خلال ${S.set.days} يوم — كلّم العميل</b><div class="tw"><table>${debtHead()}${soon.sort((a,b)=>a.due.localeCompare(b.due)).map(d=>debtRow(d)).join("")}</table></div></div>`;
-  $("#dueAlerts").innerHTML=alerts;
-  const n=late.length+soon.length;$("#navBadge").textContent=n;$("#navBadge").classList.toggle("hide",!n);
-  document.title=(n?`(${n}) `:"")+"جلوبال — المخازن والمديونيات";
-  let tc=0,ts=0;S.items.forEach(it=>{const x=itemRow(it);tc+=x.costEGP||0;ts+=x.sellEGP||0});
-  const totDebtEGP=open.reduce((t,d)=>t+toEGP(debtLeft(d),d.cur,r),0);
-  $("#kpis").innerHTML=`
-   <div class="kpi"><span>قيمة المخزن بالتكلفة</span><b>${money(tc,"EGP")}</b><small>${r?money(egpTo(tc,"EUR",r),"EUR"):""}</small></div>
-   <div class="kpi"><span>قيمة المخزن بسعر البيع</span><b>${money(ts,"EGP")}</b><small>${r?money(egpTo(ts,"EUR",r),"EUR"):""}</small></div>
-   <div class="kpi"><span>المديونيات المعلقة</span><b>${money(totDebtEGP,"EGP")}</b><small>${open.length} قسط/فاتورة</small></div>
-   <div class="kpi"><span>متأخر / قريب</span><b style="color:var(--red)">${late.length} / ${soon.length}</b><small>تنبيه قبل الميعاد بـ ${S.set.days} يوم</small></div>`;
-  const nxt=open.filter(d=>daysTo(d.due)<=30).sort((a,b)=>a.due.localeCompare(b.due));
-  $("#dashDue").innerHTML=nxt.length?`<table>${debtHead()}${nxt.map(d=>debtRow(d)).join("")}</table>`:`<p class="mut">مفيش تحصيلات خلال 30 يوم.</p>`;
-  notify(late,soon)}
+function debtRow(d,a=true){const [cls,txt]=statusOf(d),left=debtLeft(d);
+  const tr=cls==="p-late"?' class="late"':cls==="p-soon"?' class="soon"':'';
+  return `<tr${tr}><td>${fd(d.due)}</td><td><b>${esc(cust(d.cust).name)}</b></td><td>${esc(d.desc)}</td><td>${money(+d.amount,d.cur)}</td><td>${money(debtPaid(d),d.cur)}</td><td><b>${money(left,d.cur)}</b>${d.cur!=="EGP"&&left?`<div class="mut">≈ ${money(toE(left,d.cur),"EGP")}</div>`:""}</td><td><span class="pill ${cls}">${txt}</span></td>${a?`<td class="noprint">${left>0?`<button class="s" onclick="payDebt('${d.id}')">تحصيل</button><button class="s wa" onclick="waRemind('${d.id}')">تذكير واتساب</button><button class="s" onclick="icsOne('${d.id}')">تقويم</button><button class="s" onclick="moveDue('${d.id}')">تأجيل</button>`:""}<button class="s" onclick="delDebt('${d.id}')">حذف</button></td>`:""}</tr>`}
 
 let notified=false;
-function notify(late,soon){if(notified||!(late.length+soon.length))return;notified=true;
-  const msg=`${late.length} متأخر و ${soon.length} ميعاده قرب`;
-  try{if("Notification" in window){if(Notification.permission==="granted")new Notification("تحصيلات جلوبال",{body:msg});
-    else if(Notification.permission!=="denied")Notification.requestPermission()}}catch(e){}}
+function renderDash(){const r=rate();
+  const open=L("debts").filter(d=>debtLeft(d)>0);
+  const late=open.filter(d=>daysTo(d.due)<0).sort((a,b)=>a.due.localeCompare(b.due)),soon=open.filter(d=>{const n=daysTo(d.due);return n>=0&&n<=SET.days}).sort((a,b)=>a.due.localeCompare(b.due));
+  const low=L("items").filter(i=>+i.min&&qtyOf(i.id)<=+i.min);
+  let al="";
+  if(!r)al+=`<div class="alert red">⚠ لسه ما سجلتش سعر الدولار واليورو — <a href="#" onclick="show('rates');return false">سجّله من هنا</a></div>`;
+  else if(daysTo(r.date)<0)al+=`<div class="alert">آخر سعر عملة متسجل بتاريخ ${fd(r.date)} — <a href="#" onclick="show('rates');return false">حدّث سعر النهارده</a></div>`;
+  if(late.length)al+=`<div class="alert red"><b>🔴 ${late.length} مديونية متأخرة عن ميعادها</b><div class="tw"><table>${debtHead()}${late.map(d=>debtRow(d)).join("")}</table></div></div>`;
+  if(soon.length)al+=`<div class="alert"><b>🔔 ${soon.length} تحصيل ميعاده خلال ${SET.days} يوم — كلّم العميل</b><div class="tw"><table>${debtHead()}${soon.map(d=>debtRow(d)).join("")}</table></div></div>`;
+  if(low.length)al+=`<div class="alert">📦 أصناف قربت تخلص: ${low.map(i=>`<b>${esc(i.name)}</b> (${fq(qtyOf(i.id))})`).join("، ")}</div>`;
+  $("#dashAlerts").innerHTML=al;
+  const n=late.length+soon.length;$("#navBadge").textContent=n;$("#navBadge").classList.toggle("hide",!n);
+  document.title=(n?`(${n}) `:"")+"جلوبال — الحسابات والمخازن";
+  $("#ratesMini").innerHTML=r?`سعر ${fd(r.date)}: $ ${f2(r.usd)} · € ${f2(r.eur)}`:`<span style="color:#ffb4a8">⚠ سجّل سعر العملة</span>`;
+  const p=pl(today().slice(0,7));
+  $("#kpis").innerHTML=`
+   <div class="kpi"><span>الفلوس في الخزينة والبنوك</span><b>${money(cashTotal())}</b><small>كل العملات بالجنيه</small></div>
+   <div class="kpi"><span>قيمة المخزون (بالتكلفة)</span><b>${money(stockValue())}</b><small>${r?money(fromE(stockValue(),"EUR"),"EUR"):""}</small></div>
+   <div class="kpi"><span>لينا عند العملاء</span><b>${money(recvTotal())}</b><small>${open.length} قسط/فاتورة</small></div>
+   <div class="kpi"><span>علينا للموردين</span><b>${money(payTotal())}</b><small>${L("sup").length} مورد</small></div>
+   <div class="kpi"><span>صافي ربح الشهر ده</span><b class="${p.net>=0?'pos':'neg'}">${money(p.net)}</b><small>مبيعات ${f2(p.rev)} · مصروفات ${f2(p.exT)}</small></div>`;
+  const accs=L("acc").sort(byName);
+  $("#dAcc").innerHTML=accs.length?`<table><tr><th>الحساب</th><th>الرصيد</th><th>بالجنيه</th></tr>${accs.map(a=>{const b=accBal(a);return `<tr><td>${esc(a.name)}</td><td>${money(b,a.cur)}</td><td>${a.cur==="EGP"?"":money(toE(b,a.cur))}</td></tr>`}).join("")}<tr class="tot"><td>الإجمالي</td><td></td><td>${money(cashTotal())}</td></tr></table>`:`<p class="mut">ضيف حساباتك من الإعدادات.</p>`;
+  const mx=Math.max(1,...Object.values(p.ex));
+  $("#dExp").innerHTML=Object.keys(p.ex).length?Object.entries(p.ex).sort((a,b)=>b[1]-a[1]).map(([k,v])=>`<div style="margin-bottom:9px"><div class="row sp" style="font-size:13.5px"><span>${esc(k)}</span><b>${f2(v)}</b></div><div class="bar" style="width:${v/mx*100}%"></div></div>`).join(""):`<p class="mut">مفيش مصروفات الشهر ده.</p>`;
+  const nx=open.filter(d=>daysTo(d.due)<=30).sort((a,b)=>a.due.localeCompare(b.due));
+  $("#dDue").innerHTML=nx.length?`<table>${debtHead()}${nx.map(d=>debtRow(d)).join("")}</table>`:`<p class="mut">مفيش تحصيلات خلال 30 يوم.</p>`;
+  if(!notified&&n){notified=true;try{if("Notification" in window){if(Notification.permission==="granted")new Notification("تحصيلات جلوبال",{body:`${late.length} متأخر و ${soon.length} ميعاده قرب`});else if(Notification.permission!=="denied")Notification.requestPermission()}}catch(e){}}}
 
-/* ========== actions ========== */
-function fdata(f){return Object.fromEntries(new FormData(f).entries())}
-$("#fRate").onsubmit=async e=>{e.preventDefault();const d=fdata(e.target);
-  const ex=S.rates.find(x=>x.date===d.date);const o={id:ex?ex.id:uid(),date:d.date,usd:+d.usd,eur:+d.eur};
-  await put("rates",o);if(ex)Object.assign(ex,o);else S.rates.push(o);e.target.reset();e.target.date.value=today();render()};
-async function delRate(id){if(!confirm("حذف السعر؟"))return;await del("rates",id);S.rates=S.rates.filter(x=>x.id!==id);render()}
+function renderRates(){const rows=L("rates").sort((a,b)=>b.date.localeCompare(a.date));
+  $("#ratesTbl").innerHTML=rows.length?`<table><tr><th>التاريخ</th><th>الدولار</th><th>اليورو</th><th>يورو/دولار</th><th></th></tr>${rows.map(x=>`<tr><td>${fd(x.date)}</td><td>${f2(x.usd)}</td><td>${f2(x.eur)}</td><td>${(x.eur/x.usd).toFixed(4)}</td><td><button class="s" onclick="delRate('${x.id}')">حذف</button></td></tr>`).join("")}</table>`:`<p class="mut">لسه مفيش أسعار.</p>`}
 
-$("#fItem").onsubmit=async e=>{e.preventDefault();const d=fdata(e.target);const isNew=!d.rid;
-  const it={id:d.rid||uid(),code:d.code,name:d.name,cat:d.cat,unit:d.unit||"قطعة",cost:+d.cost||0,costCur:d.costCur,sellEur:+d.sellEur||0,min:+d.min||0};
-  await put("items",it);const i=S.items.findIndex(x=>x.id===it.id);if(i>=0)S.items[i]=it;else S.items.push(it);
-  if(isNew&&+d.qty0){const m={id:uid(),item:it.id,qty:+d.qty0,cost:it.cost,date:today(),ref:"رصيد افتتاحي"};await put("moves",m);S.moves.push(m)}
-  resetItem();render()};
-function resetItem(){const f=$("#fItem");f.reset();f.rid.value="";f.qty0.disabled=false;$("#itemFormTitle").textContent="إضافة صنف"}
-$("#itemCancel").onclick=resetItem;
-$("#itemSearch").oninput=renderItems;
-function editItem(id){const it=S.items.find(x=>x.id===id),f=$("#fItem");for(const k of ["code","name","cat","unit","cost","costCur","sellEur","min"])f[k].value=it[k]??"";f.rid.value=it.id;
-  f.qty0.value=0;f.qty0.disabled=true;$("#itemFormTitle").textContent="تعديل: "+it.name;f.scrollIntoView({behavior:"smooth"})}
-async function adjItem(id){const it=S.items.find(x=>x.id===id),cur=stockOf(id);
-  const v=prompt(`الرصيد الحالي ${cur} — اكتب الرصيد الفعلي بعد الجرد:`,cur);if(v===null||v===""||isNaN(+v))return;
-  const diff=+v-cur;if(!diff)return;const m={id:uid(),item:id,qty:diff,cost:diff>0?avgCost(it):null,date:today(),ref:"تسوية جرد"};await put("moves",m);S.moves.push(m);render()}
-function itemCard(id){const it=S.items.find(x=>x.id===id);let bal=0;
-  const ms=S.moves.filter(m=>m.item===id).sort((a,b)=>a.date.localeCompare(b.date));
-  dlg(`<h2>حركة: ${esc(it.name)}</h2><div class="tw"><table><tr><th>التاريخ</th><th>البيان</th><th>وارد</th><th>منصرف</th><th>الرصيد</th></tr>${ms.map(m=>{bal+=m.qty;return `<tr><td>${fd(m.date)}</td><td>${esc(m.ref)}</td><td>${m.qty>0?m.qty:""}</td><td>${m.qty<0?-m.qty:""}</td><td>${bal}</td></tr>`}).join("")}</table></div>`)}
+const kindName={rcpt:["تحصيل من عميل","p-in"],in:["إيراد آخر","p-in"],dep:["إيداع / تمويل","p-in"],pay:["دفع لمورد","p-out"],shipc:["مصاريف شحنة","p-out"],exp:["مصروف","p-out"],wd:["مسحوبات","p-out"],xfer:["تحويل",""]};
+function cashRow(m,del=true){const a=acc(m.acc),[k,c]=kindName[m.kind]||[m.kind,""];
+  const who=m.kind==="rcpt"?cust(m.party).name:m.kind==="pay"?sup(m.party).name:m.kind==="exp"?m.cat:m.kind==="xfer"?"← "+acc(m.to).name+` (${f2(m.amountTo)} ${sym[acc(m.to).cur]})`:m.kind==="shipc"?"شحنة "+((G("ships",m.ship)||{}).no||""):"";
+  return `<tr><td>${fd(m.date)}</td><td><span class="pill ${c}">${k}</span></td><td>${esc(a.name)}</td><td>${esc(who)}</td><td>${esc(m.note)}</td><td>${money(+m.amount,a.cur)}</td>${del?`<td class="noprint">${m.auto?'<span class="mut">تلقائي</span>':`<button class="s" onclick="delCash('${m.id}')">حذف</button>`}</td>`:""}</tr>`}
+const cashHead=`<tr><th>التاريخ</th><th>النوع</th><th>الحساب</th><th>الطرف / البند</th><th>البيان</th><th>المبلغ</th><th class="noprint"></th></tr>`;
+function renderCash(){const accs=L("acc").sort(byName);
+  $("#accTbl").innerHTML=`<table><tr><th>الحساب</th><th>العملة</th><th>رصيد أول المدة</th><th>الرصيد الحالي</th><th>بالجنيه</th></tr>${accs.map(a=>`<tr><td>${esc(a.name)}</td><td>${a.cur}</td><td>${money(+a.open,a.cur)}</td><td><b>${money(accBal(a),a.cur)}</b></td><td>${money(toE(accBal(a),a.cur))}</td></tr>`).join("")}</table>`;
+  const f=$("#cashFilter").value;const rows=L("cash").filter(m=>!f||m.acc==f||m.to==f).sort((a,b)=>b.date.localeCompare(a.date)||String(b.id).localeCompare(String(a.id)));
+  $("#cashTbl").innerHTML=rows.length?`<table>${cashHead}${rows.map(m=>cashRow(m)).join("")}</table>`:`<p class="mut">مفيش حركات.</p>`}
+function cashKindUI(){const k=$("#cashKind").value;$$(".k-xfer").forEach(e=>e.classList.toggle("hide",k!=="xfer"));$$(".k-pay").forEach(e=>e.classList.toggle("hide",k!=="pay"));$$(".k-shipc").forEach(e=>e.classList.toggle("hide",k!=="shipc"))}
+$("#cashKind").onchange=cashKindUI;$("#cashFilter").onchange=renderCash;
 
-/* shipment lines */
-function shipLine(){const tr=document.createElement("tr");tr.innerHTML=`<td><select class="itemSel" required>${itemOpts()}</select></td><td><input type="number" step="any" class="q" required></td><td><input type="number" step="any" class="c" required></td><td><button class="s" type="button" onclick="this.closest('tr').remove()">×</button></td>`;$("#shipLines").appendChild(tr)}
-$("#addLine").onclick=shipLine;
-$("#fShip").cur.onchange=e=>{const r=rate();const c=e.target.value;$("#fShip").rate.value=r&&c!=="EGP"?(c==="USD"?r.usd:r.eur):c==="EGP"?1:""};
+function renderExp(){const m=$("#expMonth").value||today().slice(0,7);
+  const rows=L("cash").filter(x=>x.kind==="exp"&&x.date.startsWith(m)).sort((a,b)=>b.date.localeCompare(a.date));
+  const by={};rows.forEach(x=>by[x.cat]=(by[x.cat]||0)+ +x.egp);
+  $("#expTbl").innerHTML=rows.length?`<table>${cashHead}${rows.map(x=>cashRow(x)).join("")}<tr class="tot"><td colspan="5">الإجمالي بالجنيه</td><td>${money(rows.reduce((t,x)=>t+ +x.egp,0))}</td><td></td></tr></table>
+   <h2 style="margin-top:16px">حسب البند</h2><table>${Object.entries(by).sort((a,b)=>b[1]-a[1]).map(([k,v])=>`<tr><td>${esc(k)}</td><td>${money(v)}</td></tr>`).join("")}</table>`:`<p class="mut">مفيش مصروفات في الشهر ده.</p>`}
+$("#expMonth").onchange=renderExp;
+
+function renderStock(){const q=($("#stSearch").value||"").trim(),whs=L("wh").sort(byName),r=rate();let tv=0,ts=0;
+  const items=L("items").filter(i=>!q||(i.name+(i.code||"")+(i.cat||"")).includes(q)).sort(byName);
+  const rows=items.map(i=>{const tq=qtyOf(i.id),ac=avgCost(i.id),v=tq*ac,sv=r?toE(tq*(+i.sell||0),"EUR"):NaN;tv+=v;ts+=sv||0;const lw=+i.min&&tq<=+i.min;
+    return `<tr${lw?' class="soon"':''}><td>${esc(i.code)}</td><td><b>${esc(i.name)}</b>${lw?' <span class="pill p-soon">قرب يخلص</span>':''}<div class="mut">${esc(i.cat)}</div></td>${whs.map(w=>`<td>${fq(qtyOf(i.id,w.id))||'<span class="mut">—</span>'}</td>`).join("")}<td><b>${fq(tq)}</b> ${esc(i.unit)}</td><td>${money(ac)}</td><td>${money(v)}</td><td>${money(+i.sell,"EUR")}</td><td>${money(sv)}</td><td class="noprint"><button class="s" onclick="editItem('${i.id}')">تعديل</button><button class="s" onclick="itemCard('${i.id}')">حركة</button></td></tr>`}).join("");
+  $("#stTbl").innerHTML=items.length?`<table><tr><th>كود</th><th>الصنف</th>${whs.map(w=>`<th>${esc(w.name)}</th>`).join("")}<th>الإجمالي</th><th>متوسط التكلفة</th><th>القيمة بالتكلفة</th><th>سعر البيع</th><th>القيمة بسعر البيع</th><th class="noprint"></th></tr>${rows}<tr class="tot"><td colspan="${whs.length+4}">الإجمالي</td><td>${money(tv)}</td><td></td><td>${money(ts)}</td><td class="noprint"></td></tr></table>`:`<p class="mut">ضيف الأصناف من تحت.</p>`;
+  const low=L("items").filter(i=>+i.min&&qtyOf(i.id)<=+i.min);
+  $("#stKpis").innerHTML=`<div class="kpi"><span>قيمة المخزون بالتكلفة</span><b>${money(stockValue())}</b><small>${r?money(fromE(stockValue(),"EUR"),"EUR"):""}</small></div>
+   <div class="kpi"><span>عدد الأصناف</span><b>${L("items").length}</b><small>في ${whs.length} مخزن</small></div>
+   <div class="kpi"><span>أصناف قربت تخلص</span><b class="${low.length?'neg':''}">${low.length}</b><small>${low.map(i=>esc(i.name)).join("، ")||"كله تمام"}</small></div>`;
+  $("#whTbl").innerHTML=`<table><tr><th>المخزن</th><th>قيمة البضاعة فيه</th><th></th></tr>${whs.map(w=>`<tr><td>${esc(w.name)}</td><td>${money(L("items").reduce((t,i)=>t+qtyOf(i.id,w.id)*avgCost(i.id),0))}</td><td><button class="s" onclick="renWh('${w.id}')">تغيير الاسم</button></td></tr>`).join("")}</table>`;
+  const sm=L("smv").sort((a,b)=>b.date.localeCompare(a.date)||String(b.id).localeCompare(String(a.id))).slice(0,200);
+  $("#smTbl").innerHTML=sm.length?`<table><tr><th>التاريخ</th><th>الصنف</th><th>المخزن</th><th>البيان</th><th>وارد</th><th>منصرف</th><th>تكلفة الوحدة</th></tr>${sm.map(m=>`<tr><td>${fd(m.date)}</td><td>${esc(item(m.item).name)}</td><td>${esc(wh(m.wh).name)}</td><td>${esc(m.ref)}</td><td class="pos">${m.qty>0?fq(m.qty):""}</td><td class="neg">${m.qty<0?fq(-m.qty):""}</td><td>${m.cost!=null?money(m.cost):""}</td></tr>`).join("")}</table><p class="mut">بيظهر آخر 200 حركة. حركة كل صنف كاملة من زرار "حركة".</p>`:`<p class="mut">مفيش حركات.</p>`}
+$("#stSearch").oninput=renderStock;
+
+function shipTotals(sh){const val=(sh.lines||[]).reduce((t,l)=>t+l.qty*l.price,0);const ex=["freight","insurance","customs","clearance","transport","other"].reduce((t,k)=>t+(+sh[k]||0),0);
+  return {val,valE:val*sh.rate,ex,landed:val*sh.rate+ex}}
+function renderShips(){const rows=L("ships").sort((a,b)=>b.date.localeCompare(a.date)).map(sh=>{const t=shipTotals(sh);
+  const paidEx=L("cash").filter(m=>m.kind==="shipc"&&m.ship==sh.id).reduce((s,m)=>s+ +m.egp,0);
+  return `<tr><td><b>${esc(sh.no)}</b></td><td>${fd(sh.date)}</td><td>${esc(sup(sh.sup).name)}</td><td>${(sh.lines||[]).map(l=>esc(item(l.item).name)+" × "+fq(l.qty)).join("<br>")}</td><td>${money(t.val,sh.cur)}<div class="mut">مصاريف ${f2(t.ex)} ج.م${paidEx?` (اتدفع منها ${f2(paidEx)})`:""}</div></td><td><b>${money(t.landed)}</b></td><td>${(sh.files||[]).length} ملف</td><td class="noprint"><button class="s" onclick="shipSheet('${sh.id}')">شيت التكلفة</button><button class="s" onclick="shipFiles('${sh.id}')">المستندات</button><button class="s" onclick="delShip('${sh.id}')">حذف</button></td></tr>`}).join("");
+  $("#shipsTbl").innerHTML=rows?`<table><tr><th>رقم الشحنة</th><th>التاريخ</th><th>المورد</th><th>الأصناف</th><th>القيمة</th><th>التكلفة لحد المخزن</th><th>مستندات</th><th class="noprint"></th></tr>${rows}</table>`:`<p class="mut">مفيش شحنات لسه.</p>`}
+
+function renderSales(){const rows=L("sales").sort((a,b)=>b.date.localeCompare(a.date)).map(s=>`<tr><td>${esc(s.no)}</td><td>${fd(s.date)}</td><td>${esc(cust(s.cust).name)}</td><td>${(s.lines||[]).map(l=>esc(item(l.item).name)+" × "+fq(l.qty)+` <span class="mut">(${esc(wh(l.wh).name)})</span>`).join("<br>")}</td><td>${money(s.total,s.cur)}</td><td>${money(s.paid,s.cur)}</td><td>${money(s.cogs)}</td><td>${money(s.egp-s.cogs)}</td><td class="noprint"><button class="s" onclick="printSale('${s.id}')">طباعة</button><button class="s" onclick="delSale('${s.id}')">إلغاء</button></td></tr>`).join("");
+  $("#salesTbl").innerHTML=rows?`<table><tr><th>رقم</th><th>التاريخ</th><th>العميل</th><th>الأصناف</th><th>الإجمالي</th><th>المدفوع وقتها</th><th>التكلفة</th><th>الربح (جنيه)</th><th class="noprint"></th></tr>${rows}</table>`:`<p class="mut">مفيش فواتير لسه.</p>`}
+
+const sumByCur=ds=>{const m={};ds.forEach(d=>m[d.cur]=(m[d.cur]||0)+debtLeft(d));const k=Object.keys(m);return k.length?k.map(c=>money(m[c],c)).join("<br>"):"—"};
+function renderDebts(){const f=$("#debtFilter").value;const list=L("debts").filter(d=>f==="all"||debtLeft(d)>0).sort((a,b)=>a.due.localeCompare(b.due));
+  $("#debtsTbl").innerHTML=list.length?`<table>${debtHead()}${list.map(d=>debtRow(d)).join("")}</table>`:`<p class="mut">مفيش مديونيات معلقة 👌</p>`;
+  const by={};L("debts").filter(d=>debtLeft(d)>0).forEach(d=>(by[d.cust]=by[d.cust]||[]).push(d));
+  $("#perCust").innerHTML=Object.keys(by).length?`<table><tr><th>العميل</th><th>الباقي</th><th>بالجنيه</th><th>أقرب ميعاد</th></tr>${Object.entries(by).map(([c,ds])=>`<tr><td>${esc(cust(c).name)}</td><td>${sumByCur(ds)}</td><td>${money(ds.reduce((t,d)=>t+toE(debtLeft(d),d.cur),0))}</td><td>${fd(ds.map(d=>d.due).sort()[0])}</td></tr>`).join("")}</table>`:`<p class="mut">—</p>`}
+$("#debtFilter").onchange=renderDebts;
+
+function renderCusts(){const cs=L("cust").sort(byName);
+  $("#custsTbl").innerHTML=cs.length?`<table><tr><th>العميل</th><th>الموبايل</th><th>العنوان</th><th>المديونية المعلقة</th><th></th></tr>${cs.map(c=>{const ds=L("debts").filter(d=>d.cust==c.id&&debtLeft(d)>0);
+    return `<tr><td><b>${esc(c.name)}</b><div class="mut">${esc(c.notes)}</div></td><td dir="ltr">${esc(c.phone)}</td><td>${esc(c.addr)}</td><td>${sumByCur(ds)}</td><td><button class="s" onclick="editCust('${c.id}')">تعديل</button><button class="s" onclick="custStatement('${c.id}')">كشف حساب</button></td></tr>`}).join("")}</table>`:`<p class="mut">ضيف العملاء الأول.</p>`}
+
+function renderSups(){const ss=L("sup").sort(byName);
+  $("#supsTbl").innerHTML=ss.length?`<table><tr><th>المورد</th><th>العملة</th><th>فواتير</th><th>اتدفع</th><th>الباقي علينا</th><th>بالجنيه</th><th></th></tr>${ss.map(s=>{const x=supBal(s);return `<tr><td><b>${esc(s.name)}</b><div class="mut">${esc(s.contact)}</div></td><td>${s.cur}</td><td>${money(x.pur,s.cur)}</td><td>${money(x.paid,s.cur)}</td><td><b>${money(x.bal,s.cur)}</b></td><td>${money(toE(x.bal,s.cur))}</td><td><button class="s" onclick="editSup('${s.id}')">تعديل</button><button class="s" onclick="supStatement('${s.id}')">كشف حساب</button></td></tr>`}).join("")}<tr class="tot"><td colspan="5">الإجمالي بالجنيه</td><td>${money(payTotal())}</td><td></td></tr></table>`:`<p class="mut">ضيف الموردين الأول.</p>`}
+
+function renderPL(){const m=$("#plMonth").value||today().slice(0,7);const p=pl(m);
+  $("#plTitle").textContent="قائمة الأرباح والخسائر — "+m.split("-").reverse().join("/");
+  $("#plTbl").innerHTML=`<table class="pl">
+   <tr><td>المبيعات <span class="mut">(${p.n} فاتورة)</span></td><td>${money(p.rev)}</td></tr>
+   <tr><td>(-) تكلفة البضاعة المباعة</td><td>${money(-p.cogs)}</td></tr>
+   <tr class="tot"><td>مجمل الربح ${p.rev?`<span class="mut">(${f2(p.gross/p.rev*100)}%)</span>`:""}</td><td>${money(p.gross)}</td></tr>
+   ${p.other?`<tr><td>(+) إيرادات أخرى</td><td>${money(p.other)}</td></tr>`:""}
+   <tr><td>(-) المصروفات</td><td>${money(-p.exT)}</td></tr>
+   ${Object.entries(p.ex).sort((a,b)=>b[1]-a[1]).map(([k,v])=>`<tr class="sub"><td>${esc(k)}</td><td>${f2(v)}</td></tr>`).join("")}
+   <tr class="tot"><td>صافي الربح</td><td><b class="${p.net>=0?'pos':'neg'}">${money(p.net)}</b></td></tr></table>
+   <p class="mut">المبيعات والمصروفات بالعملات الأجنبية محسوبة بسعر الصرف يوم تسجيلها.</p>`}
+$("#plMonth").onchange=renderPL;
+
+function renderSet(){const f=$("#fSet");if(document.activeElement&&f.contains(document.activeElement))return;
+  f.days.value=SET.days;f.company.value=SET.company;f.cats.value=SET.cats.join("، ");
+  $("#lastBackup").textContent=SET.lastBackup?"آخر نسخة: "+fd(SET.lastBackup):"لسه ما اتعملش نسخة احتياطية";
+  $("#accSetTbl").innerHTML=`<table><tr><th>الحساب</th><th>العملة</th><th>رصيد أول المدة</th><th></th></tr>${L("acc").sort(byName).map(a=>`<tr><td>${esc(a.name)}</td><td>${a.cur}</td><td>${money(+a.open,a.cur)}</td><td><button class="s" onclick="editAcc('${a.id}')">تعديل</button></td></tr>`).join("")}</table>`}
+
+/* ===================== actions ===================== */
+async function saveSet(){await put("set",{id:"main",...SET})}
+$("#fRate").onsubmit=async e=>{e.preventDefault();const d=fdata(e.target);const ex=L("rates").find(x=>x.date===d.date);
+  await put("rates",{id:ex?ex.id:uid(),date:d.date,usd:+d.usd,eur:+d.eur});e.target.reset();e.target.date.value=today();render()};
+async function delRate(id){if(!confirm("حذف السعر؟"))return;await del("rates",id);render()}
+
+$("#fCash").onsubmit=async e=>{e.preventDefault();const d=fdata(e.target),a=acc(d.acc);if(!needRate())return;
+  const o={id:uid(),date:d.date,kind:d.kind,acc:d.acc,amount:+d.amount,note:d.note,egp:toE(+d.amount,a.cur)};
+  if(d.kind==="xfer"){if(d.acc===d.to){alert("اختار حسابين مختلفين");return}o.to=d.to;o.amountTo=+d.amountTo||fromE(o.egp,acc(d.to).cur)}
+  if(d.kind==="pay"){if(!d.party){alert("اختار المورد");return}o.party=d.party;o.amountSup=fromE(o.egp,sup(d.party).cur)}
+  if(d.kind==="shipc"){if(!d.ship){alert("اختار الشحنة");return}o.ship=d.ship}
+  await put("cash",o);const k=d.kind;e.target.reset();e.target.date.value=today();e.target.kind.value=k;cashKindUI();render()};
+async function delCash(id){if(!confirm("حذف الحركة؟"))return;await del("cash",id);render()}
+$("#fExp").onsubmit=async e=>{e.preventDefault();const d=fdata(e.target),a=acc(d.acc);if(!needRate())return;
+  await put("cash",{id:uid(),date:d.date,kind:"exp",acc:d.acc,cat:d.cat,amount:+d.amount,note:d.note,egp:toE(+d.amount,a.cur)});
+  e.target.amount.value="";e.target.note.value="";render()};
+
+/* items & warehouses */
+$("#fItem").onsubmit=async e=>{e.preventDefault();const d=fdata(e.target);
+  await put("items",{id:d.rid||uid(),code:d.code,name:d.name,cat:d.cat,unit:d.unit||"قطعة",sell:+d.sell||0,min:+d.min||0});resetItem();render()};
+function resetItem(){const f=$("#fItem");f.reset();f.rid.value="";$("#itemFormTitle").textContent="إضافة صنف"}
+$("#itemNew").onclick=resetItem;
+function editItem(id){const it=item(id),f=$("#fItem");["code","name","cat","unit","sell","min"].forEach(k=>f[k].value=it[k]??"");f.rid.value=id;$("#itemFormTitle").textContent="تعديل: "+it.name;f.scrollIntoView({behavior:"smooth"})}
+function itemCard(id){const it=item(id);let bal=0;const ms=L("smv").filter(m=>m.item==id).sort((a,b)=>a.date.localeCompare(b.date)||String(a.id).localeCompare(String(b.id)));
+  dlg(`<h2>حركة: ${esc(it.name)}</h2><div class="tw"><table><tr><th>التاريخ</th><th>المخزن</th><th>البيان</th><th>وارد</th><th>منصرف</th><th>الرصيد</th></tr>${ms.map(m=>{bal+=+m.qty;return `<tr><td>${fd(m.date)}</td><td>${esc(wh(m.wh).name)}</td><td>${esc(m.ref)}</td><td>${m.qty>0?fq(m.qty):""}</td><td>${m.qty<0?fq(-m.qty):""}</td><td>${fq(bal)}</td></tr>`}).join("")}</table></div>`)}
+$("#fOpen").onsubmit=async e=>{e.preventDefault();const d=fdata(e.target);
+  await put("smv",{id:uid(),date:today(),item:d.item,wh:d.wh,qty:+d.qty,cost:+d.cost,ref:"رصيد افتتاحي"});e.target.reset();render()};
+$("#fWh").onsubmit=async e=>{e.preventDefault();const d=fdata(e.target);await put("wh",{id:uid(),name:d.name});e.target.reset();render()};
+async function renWh(id){const w=wh(id);const n=prompt("اسم المخزن:",w.name);if(!n)return;await put("wh",{...w,name:n});render()}
+$("#fXfer").onsubmit=async e=>{e.preventDefault();const d=fdata(e.target);if(d.from===d.to){alert("اختار مخزنين مختلفين");return}
+  const av=qtyOf(d.item,d.from);if(+d.qty>av){alert(`الرصيد في ${wh(d.from).name} ${fq(av)} بس`);return}
+  await put("smv",{id:uid(),date:today(),item:d.item,wh:d.from,qty:-d.qty,cost:null,ref:"تحويل إلى "+wh(d.to).name,xf:1});
+  await put("smv",{id:uid(),date:today(),item:d.item,wh:d.to,qty:+d.qty,cost:null,ref:"تحويل من "+wh(d.from).name,xf:1});e.target.qty.value="";render()};
+$("#fAdj").onsubmit=async e=>{e.preventDefault();const d=fdata(e.target);const diff=+d.qty-qtyOf(d.item,d.wh);if(!diff){alert("الرصيد مظبوط، مفيش فرق");return}
+  const ac=avgCost(d.item);
+  await put("smv",{id:uid(),date:today(),item:d.item,wh:d.wh,qty:diff,cost:diff>0?ac:null,loss:diff<0?-diff*ac:0,ref:diff<0?`تسوية جرد — عجز ${fq(-diff)}`:`تسوية جرد — زيادة ${fq(diff)}`});e.target.qty.value="";render()};
+
+/* shipments */
+function shipLine(){const tr=document.createElement("tr");tr.innerHTML=`<td><select class="itSel">${opts(L("items").sort(byName),i=>i.name+(i.code?` (${i.code})`:""),"— اختار —")}</select></td><td><input type="number" step="any" class="q"></td><td><input type="number" step="any" class="c"></td><td><button class="s" type="button" onclick="this.closest('tr').remove()">×</button></td>`;$("#shipLines").appendChild(tr)}
+$("#addShipLine").onclick=shipLine;
+function shipRateUI(){const c=$("#shipCur").value;$("#shipRate").value=c==="EGP"?1:(rate()?rv(c):"")}
+$("#shipCur").onchange=shipRateUI;
+$("#shipSup").onchange=()=>{const s=G("sup",$("#shipSup").value);if(s){$("#shipCur").value=s.cur;shipRateUI()}};
 $("#fShip").onsubmit=async e=>{e.preventDefault();const f=e.target,d=fdata(f);
-  if(!S.items.length){alert("ضيف الأصناف الأول من تبويب المخزن");return}
-  const lines=[...$("#shipLines").children].map(tr=>({item:tr.querySelector("select").value,qty:+tr.querySelector(".q").value,cost:+tr.querySelector(".c").value})).filter(l=>l.item&&l.qty);
-  if(!lines.length){alert("ضيف صنف واحد على الأقل");return}
-  const rt=d.cur==="EGP"?1:(+d.rate||(rate()?(d.cur==="USD"?rate().usd:rate().eur):0));
-  if(!rt){alert("اكتب سعر الصرف أو سجّل سعر العملة الأول");return}
-  const sh={id:uid(),no:d.no,date:d.date,supplier:d.supplier,cur:d.cur,rate:rt,exp:+d.exp||0,notes:d.notes,lines,files:[]};
-  // landed cost: spread expenses over value, convert back to item's cost currency
-  const val=lines.reduce((t,l)=>t+l.qty*l.cost,0);
+  const lines=[...$("#shipLines").children].map(tr=>({item:tr.querySelector("select").value,qty:+tr.querySelector(".q").value,price:+tr.querySelector(".c").value})).filter(l=>l.item&&l.qty);
+  if(!lines.length){alert("ضيف صنف واحد على الأقل (لو الصنف مش موجود ضيفه من تبويب المخازن)");return}
+  if(!+d.rate){alert("اكتب سعر الصرف");return}
+  if(!d.wh){alert("ضيف مخزن الأول من تبويب المخازن");return}
+  const sh={id:uid(),no:d.no,date:d.date,sup:d.sup,cur:d.cur,rate:+d.rate,wh:d.wh,lines,notes:d.notes,files:[]};
+  ["freight","insurance","customs","clearance","transport","other","vat"].forEach(k=>sh[k]=+d[k]||0);
+  const t=shipTotals(sh);
   for(const file of f.files.files){const fid=uid();await put("files",{id:fid,ship:sh.id,name:file.name,type:file.type,size:file.size,blob:file});sh.files.push({id:fid,name:file.name})}
-  for(const l of lines){const it=S.items.find(i=>i.id===l.item);
-    const unitEGP=l.cost*rt+(val?(sh.exp*(l.cost/val)):0);
-    const unitInItemCur=it.costCur==="EGP"?unitEGP:unitEGP/(it.costCur===d.cur?rt:(it.costCur==="USD"?(rate()||{}).usd:(rate()||{}).eur));
-    const m={id:uid(),item:l.item,qty:l.qty,cost:unitInItemCur,date:d.date,ref:"شحنة "+d.no,ship:sh.id};await put("moves",m);S.moves.push(m)}
-  await put("ships",sh);S.ships.push(sh);f.reset();f.date.value=today();$("#shipLines").innerHTML="";shipLine();render();alert("تم حفظ الشحنة وإضافة الكميات للمخزن ✔")};
-async function shipFiles(id){const sh=S.ships.find(x=>x.id===id);
-  const fs=await Promise.all((sh.files||[]).map(x=>get("files",x.id)));
+  for(const l of lines){const lv=l.qty*l.price;const unit=(lv*sh.rate+(t.val?t.ex*lv/t.val:t.ex/lines.length))/l.qty;
+    await put("smv",{id:uid(),date:d.date,item:l.item,wh:d.wh,qty:l.qty,cost:unit,ref:"وارد شحنة "+d.no,ship:sh.id})}
+  if(d.sup){const s=sup(d.sup);const amt=s.cur===sh.cur?t.val:t.valE/rv(s.cur);await put("purch",{id:uid(),date:d.date,sup:d.sup,amount:amt,note:"شحنة "+d.no,ship:sh.id})}
+  await put("ships",sh);f.reset();f.date.value=today();$("#shipLines").innerHTML="";shipLine();shipRateUI();render();alert("تم حفظ الشحنة ودخلت الكميات المخزن ✔")};
+function shipSheet(id){const sh=G("ships",id),t=shipTotals(sh);const r=(n,v)=>`<tr><td>${n}</td><td>${money(v)}</td><td>${t.landed?f2(v/t.landed*100):0}%</td></tr>`;
+  const lab={freight:"شحن",insurance:"تأمين",customs:"جمارك",clearance:"تخليص وأرضيات",transport:"نقل داخلي",other:"مصاريف تانية"};
+  dlg(`<h2>شيت تكلفة شحنة ${esc(sh.no)} — ${esc(sup(sh.sup).name)}</h2><table class="pl"><tr><th>البند</th><th>المبلغ</th><th>النسبة</th></tr>
+   ${r(`قيمة البضاعة ${f2(t.val)} ${sym[sh.cur]} × ${sh.rate}`,t.valE)}${Object.keys(lab).filter(k=>+sh[k]).map(k=>r(lab[k],+sh[k])).join("")}
+   <tr class="tot"><td>إجمالي التكلفة لحد المخزن</td><td>${money(t.landed)}</td><td>100%</td></tr>
+   ${sh.vat?`<tr><td class="mut">ضريبة قيمة مضافة مدفوعة (بتتخصم، مش تكلفة)</td><td class="mut">${f2(sh.vat)} ج.م</td><td></td></tr>`:""}</table>
+   <h2 style="margin-top:14px">تكلفة الوحدة</h2><table><tr><th>الصنف</th><th>الكمية</th><th>تكلفة الوحدة</th><th>باليورو</th></tr>${L("smv").filter(m=>m.ship==id).map(m=>`<tr><td>${esc(item(m.item).name)}</td><td>${fq(m.qty)}</td><td>${money(m.cost)}</td><td>${rate()?money(fromE(m.cost,"EUR"),"EUR"):""}</td></tr>`).join("")}</table>
+   <p><button class="b o" onclick="printDlg()">طباعة</button></p>`)}
+async function shipFiles(id){const sh=G("ships",id);const fs=(sh.files||[]).map(x=>G("files",x.id)).filter(Boolean);
   dlg(`<h2>مستندات الشحنة ${esc(sh.no)}</h2>${sh.notes?`<p class="mut">${esc(sh.notes)}</p>`:""}
-   <table>${fs.filter(Boolean).map(x=>`<tr><td>📄 ${esc(x.name)}</td><td class="mut">${(x.size/1024).toFixed(0)} KB</td><td><button class="s" onclick="openFile('${x.id}')">فتح</button><button class="s" onclick="openFile('${x.id}',1)">تنزيل</button><button class="s" onclick="rmFile('${sh.id}','${x.id}')">حذف</button></td></tr>`).join("")||"<tr><td class='mut'>مفيش مستندات</td></tr>"}</table>
-   <label style="margin-top:12px">إضافة مستندات<input type="file" multiple id="moreFiles"></label>
-   <p><button class="b" onclick="addFiles('${sh.id}')">رفع</button></p>`)}
-async function addFiles(id){const sh=S.ships.find(x=>x.id===id);for(const file of $("#moreFiles").files){const fid=uid();await put("files",{id:fid,ship:id,name:file.name,type:file.type,size:file.size,blob:file});sh.files.push({id:fid,name:file.name})}
+   <table>${fs.map(x=>`<tr><td>📄 ${esc(x.name)}</td><td class="mut">${((x.size||0)/1024).toFixed(0)} KB</td><td><button class="s" onclick="openFile('${x.id}')">فتح</button><button class="s" onclick="openFile('${x.id}',1)">تنزيل</button><button class="s" onclick="rmFile('${sh.id}','${x.id}')">حذف</button></td></tr>`).join("")||"<tr><td class='mut'>مفيش مستندات</td></tr>"}</table>
+   <label style="margin-top:12px">إضافة مستندات<input type="file" multiple id="moreFiles"></label><p><button class="b" onclick="addFiles('${sh.id}')">رفع</button></p>`)}
+async function addFiles(id){const sh={...G("ships",id)};sh.files=[...(sh.files||[])];for(const file of $("#moreFiles").files){const fid=uid();await put("files",{id:fid,ship:id,name:file.name,type:file.type,size:file.size,blob:file});sh.files.push({id:fid,name:file.name})}
   await put("ships",sh);renderShips();shipFiles(id)}
-async function rmFile(sid,fid){if(!confirm("حذف المستند؟"))return;const sh=S.ships.find(x=>x.id===sid);sh.files=sh.files.filter(x=>x.id!==fid);await del("files",fid);await put("ships",sh);renderShips();shipFiles(sid)}
-async function openFile(fid,dl){const x=await get("files",fid);if(!x||!x.path){alert("الملف مش موجود");return}
+async function rmFile(sid,fid){if(!confirm("حذف المستند؟"))return;const sh={...G("ships",sid)};sh.files=(sh.files||[]).filter(x=>x.id!==fid);await del("files",fid);await put("ships",sh);renderShips();shipFiles(sid)}
+async function openFile(fid,dl){const x=G("files",fid);if(!x||!x.path){alert("الملف مش موجود");return}
   const w=dl?null:window.open("about:blank","_blank");
   const r=chk(await sb.storage.from("docs").createSignedUrl(x.path,300,dl?{download:x.name}:undefined));
   if(dl){const a=document.createElement("a");a.href=r.data.signedUrl;a.click()}else w.location=r.data.signedUrl}
-async function delShip(id){if(!confirm("حذف الشحنة؟ هيتشال كمياتها من المخزن ومستنداتها."))return;const sh=S.ships.find(x=>x.id===id);
+async function delShip(id){if(!confirm("حذف الشحنة؟ كمياتها هتتشال من المخزن، وفاتورتها من حساب المورد، ومستنداتها هتتمسح."))return;const sh=G("ships",id);
   for(const x of sh.files||[])await del("files",x.id);
-  for(const m of S.moves.filter(m=>m.ship===id))await del("moves",m.id);S.moves=S.moves.filter(m=>m.ship!==id);
-  await del("ships",id);S.ships=S.ships.filter(x=>x.id!==id);render()}
+  for(const m of L("smv").filter(m=>m.ship==id))await del("smv",m.id);
+  for(const p of L("purch").filter(p=>p.ship==id))await del("purch",p.id);
+  await del("ships",id);render()}
 
 /* sales */
-function saleLine(){const tr=document.createElement("tr");tr.innerHTML=`<td><select class="itemSel" required>${itemOpts()}</select></td><td><input type="number" step="any" class="q" required></td><td><input type="number" step="any" class="p" required></td><td class="t">0</td><td><button class="s" type="button" onclick="this.closest('tr').remove();saleTotal()">×</button></td>`;
-  tr.querySelector("select").onchange=e=>{const it=S.items.find(i=>i.id===e.target.value);if(!it)return;const cur=$("#fSale").cur.value;
-    tr.querySelector(".p").value=cur==="EUR"?it.sellEur:(+egpTo(toEGP(it.sellEur,"EUR"),cur)).toFixed(2);saleTotal()};
+function saleLine(){const tr=document.createElement("tr");
+  tr.innerHTML=`<td><select class="itSel">${opts(L("items").sort(byName),i=>i.name+(i.code?` (${i.code})`:""),"— اختار —")}</select></td><td><select class="whSel">${opts(L("wh").sort(byName))}</select></td><td><input type="number" step="any" class="q" value="1"></td><td><input type="number" step="any" class="p"></td><td class="t">0</td><td><button class="s" type="button" onclick="this.closest('tr').remove();saleTotal()">×</button></td>`;
+  tr.querySelector(".itSel").onchange=()=>{setLinePrice(tr);const it=tr.querySelector(".itSel").value;const ws=L("wh").find(w=>qtyOf(it,w.id)>0);if(ws)tr.querySelector(".whSel").value=ws.id};
   tr.oninput=saleTotal;$("#saleLines").appendChild(tr)}
+function setLinePrice(tr){const it=G("items",tr.querySelector(".itSel").value);if(!it)return;const c=$("#saleCur").value;
+  tr.querySelector(".p").value=c==="EUR"?it.sell:rate()?(+fromE(toE(it.sell,"EUR"),c)).toFixed(2):"";saleTotal()}
+$("#saleCur").onchange=()=>[...$("#saleLines").children].forEach(setLinePrice);
 function saleTotal(){let t=0;[...$("#saleLines").children].forEach(tr=>{const v=(+tr.querySelector(".q").value||0)*(+tr.querySelector(".p").value||0);tr.querySelector(".t").textContent=f2(v);t+=v});$("#fSale").total.value=t.toFixed(2);return t}
 $("#addSaleLine").onclick=saleLine;
-$("#fSale").onsubmit=async e=>{e.preventDefault();const f=e.target,d=fdata(f);const total=saleTotal();
-  const lines=[...$("#saleLines").children].map(tr=>({item:tr.querySelector("select").value,qty:+tr.querySelector(".q").value,price:+tr.querySelector(".p").value})).filter(l=>l.item&&l.qty);
+$("#fSale").onsubmit=async e=>{e.preventDefault();const f=e.target,d=fdata(f);if(!needRate())return;
+  if(!d.cust){alert("اختار العميل");return}
+  const total=saleTotal();
+  const lines=[...$("#saleLines").children].map(tr=>({item:tr.querySelector(".itSel").value,wh:tr.querySelector(".whSel").value,qty:+tr.querySelector(".q").value,price:+tr.querySelector(".p").value})).filter(l=>l.item&&l.qty);
   if(!lines.length){alert("ضيف صنف");return}
-  for(const l of lines){const st=stockOf(l.item);if(l.qty>st&&!confirm(`${(S.items.find(i=>i.id===l.item)||{}).name}: الرصيد ${st} بس. تكمل؟`))return}
-  const paid=+d.paid||0,left=total-paid;
-  if(left>0.001&&!d.due1){alert("حدد ميعاد تحصيل الباقي");return}
-  const s={id:uid(),no:d.no||String(S.sales.length+1),date:d.date,cust:d.cust,cur:d.cur,lines,total,paid};
-  await put("sales",s);S.sales.push(s);
-  for(const l of lines){const m={id:uid(),item:l.item,qty:-l.qty,cost:null,date:d.date,ref:`بيع فاتورة ${s.no} — ${custName(d.cust)}`,sale:s.id};await put("moves",m);S.moves.push(m)}
-  if(left>0.001){const n=Math.max(1,+d.inst||1),per=Math.round(left/n*100)/100;
+  for(const l of lines){const st=qtyOf(l.item,l.wh);if(l.qty>st&&!confirm(`${item(l.item).name}: الرصيد في ${wh(l.wh).name} ${fq(st)} بس. تكمل؟`))return}
+  const paid=+d.paid||0,left=Math.round((total-paid)*100)/100;
+  if(left>0.004&&!d.due1){alert("حدد ميعاد تحصيل الباقي");return}
+  lines.forEach(l=>l.cost=l.qty*avgCost(l.item));
+  const s={id:uid(),no:d.no||String(L("sales").length+1),date:d.date,cust:d.cust,cur:d.cur,lines,total,paid,egp:toE(total,d.cur),cogs:lines.reduce((t,l)=>t+l.cost,0)};
+  await put("sales",s);
+  for(const l of lines)await put("smv",{id:uid(),date:d.date,item:l.item,wh:l.wh,qty:-l.qty,cost:null,ref:`بيع فاتورة ${s.no} — ${cust(d.cust).name}`,sale:s.id});
+  if(paid>0){const a=acc(d.paidAcc),egp=toE(paid,d.cur);await put("cash",{id:uid(),date:d.date,kind:"rcpt",acc:d.paidAcc,party:d.cust,amount:fromE(egp,a.cur),egp,note:`مقدم فاتورة ${s.no}`,sale:s.id,auto:1})}
+  if(left>0.004){const n=Math.max(1,+d.inst||1),per=Math.round(left/n*100)/100;
     for(let i=0;i<n;i++){const amt=i===n-1?Math.round((left-per*(n-1))*100)/100:per;
-      const db={id:uid(),cust:d.cust,desc:`فاتورة ${s.no}`+(n>1?` — قسط ${i+1}/${n}`:""),amount:amt,cur:d.cur,due:addDays(d.due1,i*(+d.every||30)),pays:[],sale:s.id};await put("debts",db);S.debts.push(db)}}
+      await put("debts",{id:uid(),cust:d.cust,desc:`فاتورة ${s.no}`+(n>1?` — قسط ${i+1}/${n}`:""),amount:amt,cur:d.cur,due:addDays(d.due1,i*(+d.every||30)),pays:[],sale:s.id})}}
   f.reset();f.date.value=today();$("#saleLines").innerHTML="";saleLine();render();alert("تم حفظ الفاتورة ✔")};
-async function delSale(id){if(!confirm("إلغاء الفاتورة؟ الكميات هترجع للمخزن والمديونيات بتاعتها هتتمسح."))return;
-  for(const m of S.moves.filter(m=>m.sale===id))await del("moves",m.id);S.moves=S.moves.filter(m=>m.sale!==id);
-  for(const d of S.debts.filter(d=>d.sale===id))await del("debts",d.id);S.debts=S.debts.filter(d=>d.sale!==id);
-  await del("sales",id);S.sales=S.sales.filter(x=>x.id!==id);render()}
+async function delSale(id){if(!confirm("إلغاء الفاتورة؟ الكميات هترجع المخزن، والأقساط والمقدم بتوعها هيتمسحوا."))return;
+  for(const m of L("smv").filter(m=>m.sale==id))await del("smv",m.id);
+  for(const d of L("debts").filter(d=>d.sale==id)){for(const p of d.pays||[])if(p.cash)await del("cash",p.cash);await del("debts",d.id)}
+  for(const c of L("cash").filter(c=>c.sale==id))await del("cash",c.id);
+  await del("sales",id);render()}
+function printSale(id){const s=G("sales",id),c=cust(s.cust);
+  dlg(`<h2>فاتورة رقم ${esc(s.no)}</h2><p>التاريخ: ${fd(s.date)}<br>العميل: <b>${esc(c.name)}</b> ${c.phone?`— ${esc(c.phone)}`:""}</p>
+  <table><tr><th>الصنف</th><th>الكمية</th><th>سعر الوحدة</th><th>الإجمالي</th></tr>${s.lines.map(l=>`<tr><td>${esc(item(l.item).name)}</td><td>${fq(l.qty)}</td><td>${money(l.price,s.cur)}</td><td>${money(l.qty*l.price,s.cur)}</td></tr>`).join("")}
+  <tr class="tot"><td colspan="3">الإجمالي</td><td>${money(s.total,s.cur)}</td></tr><tr><td colspan="3">المدفوع</td><td>${money(s.paid,s.cur)}</td></tr></table>
+  ${L("debts").filter(d=>d.sale==id).length?`<h2 style="margin-top:12px">مواعيد السداد</h2><table>${L("debts").filter(d=>d.sale==id).sort((a,b)=>a.due.localeCompare(b.due)).map(d=>`<tr><td>${fd(d.due)}</td><td>${money(+d.amount,d.cur)}</td></tr>`).join("")}</table>`:""}
+  <p><button class="b o" onclick="printDlg()">طباعة</button></p>`)}
 
 /* debts */
-$("#fDebt").onsubmit=async e=>{e.preventDefault();const d=fdata(e.target);const o={id:uid(),cust:d.cust,desc:d.desc,amount:+d.amount,cur:d.cur,due:d.due,pays:[]};
-  await put("debts",o);S.debts.push(o);e.target.reset();render()};
-$("#debtFilter").onchange=renderDebts;
-function payDebt(id){const d=S.debts.find(x=>x.id===id);
-  dlg(`<h2>تحصيل من ${esc(custName(d.cust))}</h2><p>الباقي: <b>${money(debtLeft(d),d.cur)}</b></p>
-  <form class="grid" id="fPay"><label>المبلغ (${d.cur})<input type="number" step="any" name="amount" value="${debtLeft(d)}" required></label><label>التاريخ<input type="date" name="date" value="${today()}"></label><label>طريقة الدفع<select name="how"><option>كاش</option><option>تحويل بنكي</option><option>شيك</option><option>إنستاباي</option></select></label><button class="b">تسجيل</button></form>
-  ${(d.pays||[]).length?`<h2 style="margin-top:14px">تحصيلات سابقة</h2><table>${d.pays.map(p=>`<tr><td>${fd(p.date)}</td><td>${money(p.amount,d.cur)}</td><td>${esc(p.how)}</td></tr>`).join("")}</table>`:""}`);
-  $("#fPay").onsubmit=async e=>{e.preventDefault();const p=fdata(e.target);d.pays=d.pays||[];d.pays.push({amount:+p.amount,date:p.date,how:p.how});await put("debts",d);$("#dlg").close();render()}}
-async function moveDue(id){const d=S.debts.find(x=>x.id===id);const v=prompt("الميعاد الجديد (سنة-شهر-يوم):",d.due);if(!v||!/^\d{4}-\d{2}-\d{2}$/.test(v))return;d.due=v;await put("debts",d);render()}
-async function delDebt(id){if(!confirm("حذف المديونية؟"))return;await del("debts",id);S.debts=S.debts.filter(x=>x.id!==id);render()}
-function waRemind(id){const d=S.debts.find(x=>x.id===id),ph=custPhone(d.cust);
-  const txt=`السلام عليكم ${custName(d.cust)}،\nنذكّر حضرتك بميعاد سداد ${d.desc||"المستحق"} بمبلغ ${f2(debtLeft(d))} ${curSym[d.cur]} يوم ${fd(d.due)}.\nشكراً لتعاملك مع ${S.set.company}.`;
+$("#fDebt").onsubmit=async e=>{e.preventDefault();const d=fdata(e.target);if(!d.cust){alert("اختار العميل");return}
+  await put("debts",{id:uid(),cust:d.cust,desc:d.desc,amount:+d.amount,cur:d.cur,due:d.due,pays:[]});e.target.reset();render()};
+function payDebt(id){const d=G("debts",id);
+  dlg(`<h2>تحصيل من ${esc(cust(d.cust).name)}</h2><p>الباقي: <b>${money(debtLeft(d),d.cur)}</b></p>
+  <form class="grid" id="fPay"><label>المبلغ (${d.cur})<input type="number" step="any" name="amount" value="${debtLeft(d)}" required></label><label>التاريخ<input type="date" name="date" value="${today()}"></label><label>دخل في حساب<select name="acc">${opts(L("acc").sort(byName),a=>`${a.name} (${a.cur})`)}</select></label><button class="b">تسجيل</button></form>
+  <p class="mut">لو الحساب بعملة تانية، المبلغ بيتحوّل بسعر النهارده.</p>
+  ${(d.pays||[]).length?`<h2 style="margin-top:14px">تحصيلات سابقة</h2><table>${d.pays.map(p=>`<tr><td>${fd(p.date)}</td><td>${money(p.amount,d.cur)}</td><td>${esc(p.how||"")}</td></tr>`).join("")}</table>`:""}`);
+  $("#fPay").onsubmit=async e=>{e.preventDefault();if(!needRate())return;const p=fdata(e.target),a=acc(p.acc),egp=toE(+p.amount,d.cur);
+    const c={id:uid(),date:p.date,kind:"rcpt",acc:p.acc,party:d.cust,amount:fromE(egp,a.cur),egp,note:"تحصيل — "+(d.desc||""),debt:d.id,sale:d.sale,auto:1};await put("cash",c);
+    await put("debts",{...d,pays:[...(d.pays||[]),{amount:+p.amount,date:p.date,how:a.name,cash:c.id}]});$("#dlg").close();render()}}
+async function moveDue(id){const d=G("debts",id);const v=prompt("الميعاد الجديد (سنة-شهر-يوم):",d.due);if(!v||!/^\d{4}-\d{2}-\d{2}$/.test(v))return;await put("debts",{...d,due:v});render()}
+async function delDebt(id){const d=G("debts",id);if(!confirm("حذف المديونية؟ التحصيلات المسجلة عليها هتتمسح من الخزينة كمان."))return;for(const p of d.pays||[])if(p.cash)await del("cash",p.cash);await del("debts",id);render()}
+function waRemind(id){const d=G("debts",id),ph=(cust(d.cust).phone||"").replace(/\D/g,"");
+  const txt=`السلام عليكم ${cust(d.cust).name}،\nنذكّر حضرتك بميعاد سداد ${d.desc||"المستحق"} بمبلغ ${f2(debtLeft(d))} ${sym[d.cur]} يوم ${fd(d.due)}.\nشكراً لتعاملك مع ${SET.company}.`;
   window.open(`https://wa.me/${ph}?text=${encodeURIComponent(txt)}`,"_blank")}
-function icsEvent(d){const dt=d.due.replace(/-/g,"");const nx=addDays(d.due,1).replace(/-/g,"");
-  return `BEGIN:VEVENT\r\nUID:${d.id}@global-inventory\r\nDTSTAMP:${new Date().toISOString().replace(/[-:]/g,"").slice(0,15)}Z\r\nDTSTART;VALUE=DATE:${dt}\r\nDTEND;VALUE=DATE:${nx}\r\nSUMMARY:تحصيل: ${custName(d.cust)} — ${f2(debtLeft(d))} ${d.cur}\r\nDESCRIPTION:${(d.desc||"").replace(/[,;\n]/g," ")}\r\nBEGIN:VALARM\r\nTRIGGER:-P${S.set.days}D\r\nACTION:DISPLAY\r\nDESCRIPTION:تحصيل بعد ${S.set.days} يوم\r\nEND:VALARM\r\nBEGIN:VALARM\r\nTRIGGER:-PT15H\r\nACTION:DISPLAY\r\nDESCRIPTION:تحصيل بكرة\r\nEND:VALARM\r\nEND:VEVENT\r\n`}
-function dlICS(evs,name){const s=`BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Global//Inventory//AR\r\n${evs}END:VCALENDAR\r\n`;
-  const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([s],{type:"text/calendar"}));a.download=name;a.click()}
-function icsOne(id){const d=S.debts.find(x=>x.id===id);dlICS(icsEvent(d),"تحصيل-"+custName(d.cust)+".ics")}
-$("#icsAll").onclick=()=>{const l=S.debts.filter(d=>debtLeft(d)>0&&daysTo(d.due)>=0);if(!l.length){alert("مفيش مواعيد جاية");return}dlICS(l.map(icsEvent).join(""),"مواعيد-التحصيل.ics")};
+function icsEvent(d){const dt=d.due.replace(/-/g,""),nx=addDays(d.due,1).replace(/-/g,"");
+  return `BEGIN:VEVENT\r\nUID:${d.id}@global\r\nDTSTAMP:${new Date().toISOString().replace(/[-:]/g,"").slice(0,15)}Z\r\nDTSTART;VALUE=DATE:${dt}\r\nDTEND;VALUE=DATE:${nx}\r\nSUMMARY:تحصيل: ${cust(d.cust).name} — ${f2(debtLeft(d))} ${d.cur}\r\nDESCRIPTION:${(d.desc||"").replace(/[,;\n]/g," ")}\r\nBEGIN:VALARM\r\nTRIGGER:-P${SET.days}D\r\nACTION:DISPLAY\r\nDESCRIPTION:تحصيل بعد ${SET.days} يوم\r\nEND:VALARM\r\nBEGIN:VALARM\r\nTRIGGER:-PT15H\r\nACTION:DISPLAY\r\nDESCRIPTION:تحصيل بكرة\r\nEND:VALARM\r\nEND:VEVENT\r\n`}
+function dlICS(evs,name){const s=`BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Global//AR\r\n${evs}END:VCALENDAR\r\n`;const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([s],{type:"text/calendar"}));a.download=name;a.click()}
+function icsOne(id){const d=G("debts",id);dlICS(icsEvent(d),"تحصيل-"+cust(d.cust).name+".ics")}
+$("#icsAll").onclick=()=>{const l=L("debts").filter(d=>debtLeft(d)>0&&daysTo(d.due)>=0);if(!l.length){alert("مفيش مواعيد جاية");return}dlICS(l.map(icsEvent).join(""),"مواعيد-التحصيل.ics")};
 
-/* customers */
-$("#fCust").onsubmit=async e=>{e.preventDefault();const d=fdata(e.target);const c={id:d.rid||uid(),name:d.name,phone:d.phone,addr:d.addr,notes:d.notes};
-  await put("custs",c);const i=S.custs.findIndex(x=>x.id===c.id);if(i>=0)S.custs[i]=c;else S.custs.push(c);e.target.reset();e.target.rid.value="";render()};
-function editCust(id){const c=S.custs.find(x=>x.id===id),f=$("#fCust");for(const k of ["name","phone","addr","notes"])f[k].value=c[k]||"";f.rid.value=c.id;f.scrollIntoView({behavior:"smooth"})}
-function custStatement(id){const ds=S.debts.filter(d=>d.cust===id).sort((a,b)=>a.due.localeCompare(b.due));
-  dlg(`<h2>كشف حساب: ${esc(custName(id))}</h2><div class="tw"><table>${debtHead(false)}${ds.map(d=>debtRow(d,false)).join("")}</table></div><p><b>الباقي:</b> ${sumByCur(ds.filter(d=>debtLeft(d)>0))}</p><button class="b o" onclick="printDlg()">طباعة</button>`)}
+/* customers & suppliers */
+$("#fCust").onsubmit=async e=>{e.preventDefault();const d=fdata(e.target);await put("cust",{id:d.rid||uid(),name:d.name,phone:d.phone,addr:d.addr,notes:d.notes});e.target.reset();e.target.rid.value="";render()};
+function editCust(id){const c=cust(id),f=$("#fCust");["name","phone","addr","notes"].forEach(k=>f[k].value=c[k]||"");f.rid.value=id;f.scrollIntoView({behavior:"smooth"})}
+function custStatement(id){const ds=L("debts").filter(d=>d.cust==id).sort((a,b)=>a.due.localeCompare(b.due));const ss=L("sales").filter(s=>s.cust==id).sort((a,b)=>a.date.localeCompare(b.date));
+  dlg(`<h2>كشف حساب: ${esc(cust(id).name)}</h2><h2>الفواتير</h2><table><tr><th>التاريخ</th><th>رقم</th><th>الإجمالي</th><th>المدفوع وقتها</th></tr>${ss.map(s=>`<tr><td>${fd(s.date)}</td><td>${esc(s.no)}</td><td>${money(s.total,s.cur)}</td><td>${money(s.paid,s.cur)}</td></tr>`).join("")}</table>
+  <h2 style="margin-top:14px">الأقساط والمديونيات</h2><div class="tw"><table>${debtHead(false)}${ds.map(d=>debtRow(d,false)).join("")}</table></div><p><b>الباقي:</b> ${sumByCur(ds.filter(d=>debtLeft(d)>0))}</p><button class="b o" onclick="printDlg()">طباعة</button>`)}
+$("#fSup").onsubmit=async e=>{e.preventDefault();const d=fdata(e.target);await put("sup",{id:d.rid||uid(),name:d.name,cur:d.cur,contact:d.contact});e.target.reset();e.target.rid.value="";render()};
+function editSup(id){const s=sup(id),f=$("#fSup");["name","cur","contact"].forEach(k=>f[k].value=s[k]||"");f.rid.value=id;f.scrollIntoView({behavior:"smooth"})}
+$("#fPur").onsubmit=async e=>{e.preventDefault();const d=fdata(e.target);if(!d.sup){alert("اختار المورد");return}await put("purch",{id:uid(),date:d.date,sup:d.sup,amount:+d.amount,note:d.note});e.target.reset();e.target.date.value=today();render()};
+function supStatement(id){const s=sup(id);const rows=[...L("purch").filter(p=>p.sup==id).map(p=>({date:p.date,t:"فاتورة",note:p.note,dr:+p.amount,cr:0,pid:p.ship?null:p.id})),...L("cash").filter(m=>m.kind==="pay"&&m.party==id).map(m=>({date:m.date,t:"دفع من "+acc(m.acc).name,note:m.note,dr:0,cr:+m.amountSup}))].sort((a,b)=>a.date.localeCompare(b.date));let bal=0;
+  dlg(`<h2>كشف حساب مورد: ${esc(s.name)} (${s.cur})</h2><table><tr><th>التاريخ</th><th>البيان</th><th>فاتورة</th><th>دفع</th><th>الرصيد</th><th></th></tr>${rows.map(r=>{bal+=r.dr-r.cr;return `<tr><td>${fd(r.date)}</td><td>${esc(r.t)} ${esc(r.note||"")}</td><td>${r.dr?f2(r.dr):""}</td><td>${r.cr?f2(r.cr):""}</td><td>${money(bal,s.cur)}</td><td>${r.pid?`<button class="s" onclick="delPur('${r.pid}','${id}')">حذف</button>`:""}</td></tr>`}).join("")}</table><p><button class="b o" onclick="printDlg()">طباعة</button></p>`)}
+async function delPur(pid,sid){if(!confirm("حذف الفاتورة؟"))return;await del("purch",pid);render();supStatement(sid)}
+
+/* accounts & settings */
+$("#fAcc").onsubmit=async e=>{e.preventDefault();const d=fdata(e.target);await put("acc",{id:d.rid||uid(),name:d.name,cur:d.cur,open:+d.open||0});e.target.reset();e.target.rid.value="";render()};
+function editAcc(id){const a=acc(id),f=$("#fAcc");f.name.value=a.name;f.cur.value=a.cur;f.open.value=a.open;f.rid.value=id;f.scrollIntoView({behavior:"smooth"})}
+$("#fSet").onsubmit=async e=>{e.preventDefault();const d=fdata(e.target);SET.days=Math.max(2,+d.days||2);SET.company=d.company;
+  SET.cats=d.cats.split(/[،,]/).map(x=>x.trim()).filter(Boolean);await saveSet();document.activeElement.blur();render();alert("تم الحفظ")};
+$("#doBackup").onclick=async()=>{const out={v:2,at:new Date().toISOString()};STORES.forEach(s=>out[s]=L(s));
+  const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([JSON.stringify(out)],{type:"application/json"}));a.download=`global-backup-${today()}.json`;a.click();
+  SET.lastBackup=today();await saveSet();renderSet()};
 
 /* dialog */
 function dlg(html){$("#dlgIn").innerHTML=html+`<p style="text-align:left"><button class="b o" onclick="document.getElementById('dlg').close()">إغلاق</button></p>`;$("#dlg").showModal()}
-function printDlg(){const w=window.open("","_blank");w.document.write(`<html dir="rtl"><head>
-<meta name="robots" content="noindex,nofollow"><meta charset="utf-8"><style>body{font-family:Tahoma;padding:20px}table{width:100%;border-collapse:collapse}td,th{border:1px solid #ccc;padding:6px;text-align:right}button{display:none}</style></head><body><h3>${esc(S.set.company)}</h3>${$("#dlgIn").innerHTML}</body></html>`);w.document.close();w.print()}
+function printDlg(){const w=window.open("","_blank");w.document.write(`<html dir="rtl"><head><meta charset="utf-8"><style>body{font-family:Tahoma;padding:20px}table{width:100%;border-collapse:collapse;margin-bottom:10px}td,th{border:1px solid #ccc;padding:6px;text-align:right}button,form{display:none}h2{font-size:16px}</style></head><body><h3>${esc(SET.company)}</h3>${$("#dlgIn").innerHTML}</body></html>`);w.document.close();w.print()}
 
-/* backup */
-const b64=blob=>new Promise(r=>{const fr=new FileReader();fr.onload=()=>r(fr.result);fr.readAsDataURL(blob)});
-$("#doBackup").onclick=async()=>{const out={v:1,at:new Date().toISOString()};
-  for(const s of STORES)out[s]=await all(s);
-  const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([JSON.stringify(out)],{type:"application/json"}));a.download=`global-backup-${today()}.json`;a.click();
-  S.set.lastBackup=today();await put("settings",{id:"main",...S.set});$("#lastBackup").textContent="آخر نسخة: "+fd(today())};
-$("#doRestore").onchange=async e=>{const file=e.target.files[0];if(!file)return;if(!confirm("الاسترجاع هيستبدل كل البيانات الحالية. تكمل؟"))return;
-  const data=JSON.parse(await file.text());
-  for(const s of STORES){await clearStore(s);
-    for(const x of data[s]||[]){if(s==="files")x.blob=await (await fetch(x.blob)).blob();await put(s,x)}}
-  await load();render();alert("تم الاسترجاع ✔")};
-$("#fSet").onsubmit=async e=>{e.preventDefault();const d=fdata(e.target);S.set.days=Math.max(2,+d.days||2);S.set.company=d.company;await put("settings",{id:"main",...S.set});render();alert("تم الحفظ")};
+/* ===================== first run & migration ===================== */
+async function firstRun(){
+  const oldHas=OLD.some(s=>Object.keys(CACHE[s]||{}).length);
+  // default warehouse & accounts
+  let mainWh=L("wh")[0];
+  if(!mainWh){mainWh=await put("wh",{id:uid(),name:"المخزن الرئيسي"})}
+  if(!L("acc").length){for(const a of [["الخزينة (كاش)","EGP"],["البنك — جنيه","EGP"],["البنك — دولار","USD"],["البنك — يورو","EUR"]])await put("acc",{id:uid(),name:a[0],cur:a[1],open:0})}
+  if(!oldHas)return;
+  const O=s=>Object.values(CACHE[s]||{});
+  for(const r of O("rates"))if(!G("rates",r.id))await put("rates",r);
+  const lr=L("rates").sort((a,b)=>b.date.localeCompare(a.date))[0];
+  const oRv=c=>c==="EGP"?1:lr?(c==="USD"?+lr.usd:+lr.eur):1;
+  const oItems={};O("items").forEach(i=>oItems[i.id]=i);
+  for(const i of O("items"))await put("items",{id:i.id,code:i.code,name:i.name,cat:i.cat,unit:i.unit,sell:+i.sellEur||0,min:+i.min||0});
+  for(const c of O("custs"))await put("cust",{id:c.id,name:c.name,phone:c.phone,addr:c.addr,notes:c.notes});
+  const supByName={};
+  for(const sh of O("ships")){let sid="";if(sh.supplier){sid=supByName[sh.supplier];if(!sid){const s=await put("sup",{id:uid(),name:sh.supplier,cur:sh.cur});sid=s.id;supByName[sh.supplier]=sid}}
+    const n={id:sh.id,no:sh.no,date:sh.date,sup:sid,cur:sh.cur,rate:+sh.rate||1,wh:mainWh.id,lines:(sh.lines||[]).map(l=>({item:l.item,qty:+l.qty,price:+l.cost})),notes:sh.notes,files:sh.files||[],freight:0,insurance:0,customs:0,clearance:0,transport:0,other:+sh.exp||0,vat:0};
+    await put("ships",n);if(sid){const t=shipTotals(n);await put("purch",{id:uid(),date:sh.date,sup:sid,amount:t.val,note:"شحنة "+sh.no,ship:sh.id})}}
+  for(const f of O("files"))await put("files",f);
+  for(const m of O("moves")){const it=oItems[m.item]||{};await put("smv",{id:m.id,date:m.date,item:m.item,wh:mainWh.id,qty:+m.qty,cost:m.cost==null?null:m.cost*oRv(it.costCur||"EGP"),ref:m.ref,ship:m.ship,sale:m.sale})}
+  for(const s of O("sales")){const lines=(s.lines||[]).map(l=>({item:l.item,wh:mainWh.id,qty:+l.qty,price:+l.price,cost:0}));
+    const it=l=>oItems[l.item]||{};lines.forEach(l=>{const c=O("moves").filter(m=>m.item==l.item&&m.qty>0&&m.cost!=null);const q=c.reduce((t,m)=>t+ +m.qty,0);l.cost=q?l.qty*c.reduce((t,m)=>t+m.qty*m.cost,0)/q*oRv(it(l).costCur||"EGP"):0});
+    await put("sales",{id:s.id,no:s.no,date:s.date,cust:s.cust,cur:s.cur,lines,total:+s.total,paid:+s.paid,egp:+s.total*oRv(s.cur),cogs:lines.reduce((t,l)=>t+l.cost,0)})}
+  for(const d of O("debts"))await put("debts",{...d,pays:(d.pays||[]).map(p=>({...p}))});
+  const os=O("settings")[0];if(os){SET.days=os.days||SET.days;SET.company=os.company||SET.company}
+  SET.migrated=today();await saveSet();
+  alert("تم نقل بياناتك من البرنامج القديم ✔\nراجع رصيد أول المدة للحسابات من تبويب الإعدادات.")}
 
-/* init */
-async function boot(){$("#login").classList.add("hide");$("#app").classList.remove("hide");await load();
-  ["#fRate","#fShip","#fSale"].forEach(q=>$(q).date.value=today());
-  $("#fSet").days.value=S.set.days;$("#fSet").company.value=S.set.company;
-  $("#lastBackup").textContent=S.set.lastBackup?"آخر نسخة: "+fd(S.set.lastBackup):"لسه ما اتعملش نسخة احتياطية";
-  shipLine();saleLine();render();
-  setInterval(()=>{notified=false;renderDash()},3*3600e3);
-}
+/* ===================== boot ===================== */
+async function boot(){$("#login").classList.add("hide");$("#app").classList.remove("hide");
+  await fetchAll();const st=G("set","main");if(st)Object.assign(SET,st);
+  if(!st){await firstRun();await saveSet()}
+  ["#fRate","#fShip","#fSale","#fCash","#fExp","#fPur"].forEach(q=>$(q).date.value=today());
+  $("#expMonth").value=$("#plMonth").value=today().slice(0,7);
+  render();shipLine();saleLine();shipRateUI();cashKindUI();
+  setInterval(()=>{notified=false;renderDash()},3*3600e3)}
 let booted=false;
 $("#fLogin").onsubmit=async e=>{e.preventDefault();const d=fdata(e.target);$("#loginErr").textContent="";
   const r=await sb.auth.signInWithPassword({email:d.email.trim(),password:d.password});
-  if(r.error){const m=r.error.message||"";$("#loginErr").textContent=(/invalid login/i.test(m)?"الإيميل أو الباسورد غلط، أو اليوزر مش موجود":/not confirmed/i.test(m)?"الإيميل لسه مش متأكد (Confirm)":"خطأ")+" — "+m;return}if(!booted){booted=true;boot()}};
+  if(r.error){const m=r.error.message||"";$("#loginErr").textContent=(/invalid login/i.test(m)?"الإيميل أو الباسورد غلط":"خطأ")+" — "+m;return}if(!booted){booted=true;boot()}};
 $("#logout").onclick=async()=>{await sb.auth.signOut();location.reload()};
 (async()=>{const {data}=await sb.auth.getSession();if(data.session){booted=true;boot()}else $("#login").classList.remove("hide")})();
 </script>
