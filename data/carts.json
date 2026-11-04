@@ -1,13 +1,13 @@
 {
   "common": {
-    "voltage_ar": "72V AC",
-    "voltage_en": "72V AC",
-    "battery_ar": "ليثيوم LiFePO4 ‏73.6V / 100Ah (اختياري 150Ah) مع BMS",
-    "battery_en": "LiFePO4 lithium 73.6V / 100Ah (150Ah optional) with BMS",
-    "motor_ar": "5KW AC (اختياري 7.5KW)",
-    "motor_en": "5KW AC (7.5KW optional)",
-    "controller_ar": "كنترولر AC ‏400A قابل للبرمجة",
-    "controller_en": "400A programmable AC controller",
+    "voltage_ar": "51.2V",
+    "voltage_en": "51.2V",
+    "battery_ar": "ليثيوم LiFePO4 ‏51.2V / 150Ah ‏(7.68 كيلووات ساعة) مع BMS",
+    "battery_en": "LiFePO4 lithium 51.2V / 150Ah (7.68 kWh) with BMS",
+    "motor_ar": "موتور AC",
+    "motor_en": "AC motor",
+    "controller_ar": "كنترولر AC قابل للبرمجة",
+    "controller_en": "Programmable AC controller",
     "speed_ar": "32 كم/س (قابلة للضبط)",
     "speed_en": "32 km/h (adjustable)",
     "brakes_ar": "فرامل ديسك هيدروليك على الـ 4 عجلات + فرامل استرجاعية + فرامل كهرومغناطيسية",
@@ -276,8 +276,8 @@
       "climb": "25%",
       "bed": "",
       "wheelbase": "2115",
-      "battery_ar": "ليثيوم LiFePO4 ‏73.6V / 105Ah",
-      "battery_en": "LiFePO4 lithium 73.6V / 105Ah",
+      "battery_ar": "",
+      "battery_en": "",
       "popular": false
     },
     {
@@ -296,8 +296,8 @@
       "climb": "20%",
       "bed": "",
       "wheelbase": "2880",
-      "battery_ar": "ليثيوم LiFePO4 ‏73.6V / 105Ah",
-      "battery_en": "LiFePO4 lithium 73.6V / 105Ah",
+      "battery_ar": "",
+      "battery_en": "",
       "popular": false
     },
     {
