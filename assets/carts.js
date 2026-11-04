@@ -51,7 +51,7 @@ function renderGrid(cat="all"){
         <div class="badges">
           <span>${icon("users")}${seatsTxt(c)}</span>
           <span>${icon("battery")}${bi("حتى "+c.range+" كم","up to "+c.range+" km")}</span>
-          <span>${icon("bolt")}72V</span>
+          <span>${icon("bolt")}150Ah</span>
           ${c.bed?`<span>${icon("truck")}${bi("صندوق","cargo bed")}</span>`:""}
         </div>
         <div class="row-btns">
@@ -74,7 +74,7 @@ function openCart(id){
         <h2>${bi(c.ar,c.en)}</h2>
         <p class="m-desc">${bi(c.dAr,c.dEn)}</p>
         <ul class="m-feat">
-          <li>${bi("نظام 72 فولت AC — عزم أعلى على الطلعات والحمولة","72V AC system — more torque on slopes and under load")}</li>
+          <li>${bi("بطارية ليثيوم 51.2V / 150Ah ‏(7.68 كيلووات ساعة)","51.2V / 150Ah lithium battery (7.68 kWh)")}</li>
           <li>${bi("بطارية ليثيوم بدون صيانة","Maintenance-free lithium battery")}</li>
           <li>${bi("فرامل ديسك هيدروليك على الـ 4 عجلات","4-wheel hydraulic disc brakes")}</li>
           <li>${bi("متاحة بـ 8 ألوان + ألوان حسب الطلب","8 colours + custom colours")}</li>
